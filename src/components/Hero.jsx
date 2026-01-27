@@ -122,8 +122,10 @@ const Hero = () => {
                             style={{ backgroundColor: 'var(--color-text-secondary)' }}
                         ></div>
                         <span className="relative z-10 flex items-center justify-center gap-2">
-                            Get Your Pass
-                            <FiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            <a className='flex items-center gap-2' href="/#pricing">
+                                Get Your Pass
+                                <FiArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            </a>
                         </span>
                     </button>
 
@@ -135,7 +137,9 @@ const Hero = () => {
                             color: 'var(--color-text)'
                         }}
                     >
+                        <a href="/#sponsor">
                         Sponsorship Deck
+                        </a>
                     </button>
                 </div>
                 {/* Floating Abstract Elements (Decor) */}

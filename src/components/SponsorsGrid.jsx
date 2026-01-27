@@ -13,7 +13,7 @@ const sponsors = [
 
 const SponsorsGrid = () => {
     return (
-        <section className="py-24" style={{ backgroundColor: 'var(--color-bg)' }}>
+        <section id='sponsor' className="py-24" style={{ backgroundColor: 'var(--color-bg)' }}>
             <div className="max-w-7xl mx-auto px-6">
 
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">

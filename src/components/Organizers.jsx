@@ -1,64 +1,64 @@
 import React, { useState } from 'react';
 import { FiArrowUpRight, FiLinkedin, FiTwitter } from 'react-icons/fi';
 
-const speakers = [
+const organizers = [
     {
         id: 1,
-        name: "Nabomita Mazumdar ",
-        role: "President of India Awardee, Founder Nabomita™",
+        name: "Mr. Amit Singh",
+        role: "MD at PITAMBRA INDUSTRIES Jhansi™",
         topic: "Ministry of Women & Child Development",
-        image: "/speakers/nabomita2.jpg",
+        image: "/organizers/Amit.jpeg",
         linkedin: "https://www.linkedin.com/in/nabomitam/"
     },
     {
         id: 2,
-        name: "Dr Abhay Sinha",
-        role: "Director General @ SEPC-India, Member Niti Aayog",
+        name: "Rahul Richhariya",
+        role: "Director Dynesty Infradevelopers",
         topic: "Global Healthcare Sector",
-        image: "/speakers/abhay2.jpg",
+        image: "/organizers/Rahul.jpeg",
         linkedin: "https://www.linkedin.com/in/dr-abhay-sinha-a82a9019/"
     },
     {
         id: 3,
-        name: "Mahavir Pratap Sharma",
-        role: "General Partner at Swishin Ventures",
+        name: "Dr Akanksha Richhariya",
+        role: "President – Rotary Club of Jhansi Rani",
         topic: "entrepreneur, angel investor, and venture capitalist with 13+ years of experience mentoring and backing early-stage startups",
-        image: "/speakers/mahabir.jpg",
+        image: "/organizers/Akanksha.jpeg",
         linkedin: "https://www.linkedin.com/in/mahavir-pratap-sharma-26476915/"
     },
     {
         id: 4,
-        name: "Anil Joshi",
-        role: "Managing Partner at Unicorn India Ventures",
+        name: "Mr. Apurv Gupta",
+        role: "Director Dainik Jagran Jhansi",
         topic: "focused on early-stage investments in tech, including Fintech, IoT, and SMAC",
-        image: "/speakers/anjli_joshi.jpg",
+        image: "/organizers/Apurv.jpeg",
         linkedin: "https://www.linkedin.com/in/aniljoshi74/"
     },
     {
         id: 5,
-        name: "Anubhav Dubey",
-        role: "Co-Founder - Chai Sutta Bar",
+        name: "Mr. Raju Parvar",
+        role: "CEO Hiscon Industries",
         topic: "investment into a ₹150+ crore empire, popularizing tea served in traditional kulhads",
-        image: "/speakers/Anubhav-Dubey.webp",
+        image: "/organizers/raju.jpg",
         linkedin: "https://www.linkedin.com/in/anubhavdubey/"
     }
 ];
 
-const SpeakersMarquee = () => {
+const Organizers = () => {
     const [activeId, setActiveId] = useState(1);
 
     return (
-        <section id="speakers" className="py-24 max-w-7xl mx-auto  relative overflow-hidden" style={{ backgroundColor: 'var(--color-bg)' }}>
+        <section id="organizers" className="py-24 max-w-7xl mx-auto  relative overflow-hidden" style={{ backgroundColor: 'var(--color-bg)' }}>
 
 
               {/* Section Header */}
                 <div className="mb-16 md:mb-24 flex flex-col md:flex-row items-start md:items-end justify-between gap-8">
                     <div>
                         <h2 className="text-4xl sm:text-6xl font-black tracking-tighter mb-4" style={{ color: 'var(--color-text)' }}>
-                            THE <span style={{ color: 'var(--color-text-muted)' }}>ORACLES.</span>
+                            THE <span style={{ color: 'var(--color-text-muted)' }}>ORGANIZERS.</span>
                         </h2>
                         <p className="max-w-md text-lg" style={{ color: 'var(--color-text-secondary)' }}>
-                            Hover to explore the visionaries defining our tomorrow.
+                            Hover to meet the architects engineering our future.
                         </p>
                     </div>
                     <button
@@ -71,13 +71,13 @@ const SpeakersMarquee = () => {
 
             {/* Accordion Container */}
             <div className="max-w-[1400px] mx-auto h-auto md:h-[600px] flex flex-col md:flex-row gap-2 px-4 md:px-0">
-                {speakers.map((speaker) => (
+                {organizers.map((organizer) => (
                     <div
-                        key={speaker.id}
-                        onMouseEnter={() => setActiveId(speaker.id)}
-                        onClick={() => setActiveId(speaker.id)} // For mobile touch interaction
+                        key={organizer.id}
+                        onMouseEnter={() => setActiveId(organizer.id)}
+                        onClick={() => setActiveId(organizer.id)} // For mobile touch interaction
                         className={`relative rounded-[2rem] overflow-hidden transition-all duration-700 ease-in-out cursor-pointer group w-full md:w-auto
-                            ${activeId === speaker.id ? 'h-[500px] md:h-auto md:flex-[4]' : 'h-[100px] md:h-auto md:flex-1'}`}
+                            ${activeId === organizer.id ? 'h-[500px] md:h-auto md:flex-[4]' : 'h-[100px] md:h-auto md:flex-1'}`}
                         style={{
                             backgroundColor: 'var(--color-surface)',
                             borderColor: 'var(--color-border)'
@@ -86,46 +86,46 @@ const SpeakersMarquee = () => {
                         {/* Background Image */}
                         <div className="absolute inset-0">
                             <img
-                                src={speaker.image}
-                                alt={speaker.name}
-                                className={`w-full h-full object-cover transition-all duration-1000 ${activeId === speaker.id ? 'scale-100 filter-none' : 'scale-110 grayscale opacity-50'}`}
+                                src={organizer.image}
+                                alt={organizer.name}
+                                className={`w-full h-full object-cover transition-all duration-1000 ${activeId === organizer.id ? 'scale-100 filter-none' : 'scale-110 grayscale opacity-50'}`}
                             />
-                            <div className={`absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent transition-opacity duration-500 ${activeId === speaker.id ? 'opacity-80' : 'opacity-60'}`}></div>
+                            <div className={`absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent transition-opacity duration-500 ${activeId === organizer.id ? 'opacity-80' : 'opacity-60'}`}></div>
                         </div>
 
                         {/* Content - Collapsed State (Mobile: Horizontal Text, Desktop: Vertical Text) */}
-                        <div className={`absolute inset-0 flex items-center justify-center pointer-events-none transition-opacity duration-300 ${activeId === speaker.id ? 'opacity-0' : 'opacity-100'}`}>
+                        <div className={`absolute inset-0 flex items-center justify-center pointer-events-none transition-opacity duration-300 ${activeId === organizer.id ? 'opacity-0' : 'opacity-100'}`}>
                             <h3 className="text-2xl font-black text-white/50 md:-rotate-90 whitespace-nowrap uppercase tracking-widest">
-                                {speaker.name}
+                                {organizer.name}
                             </h3>
                         </div>
 
                         {/* Content - Expanded State */}
-                        <div className={`absolute inset-0 p-6 md:p-12 flex flex-col justify-end transition-all duration-500 ${activeId === speaker.id ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                        <div className={`absolute inset-0 p-6 md:p-12 flex flex-col justify-end transition-all duration-500 ${activeId === organizer.id ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
 
                             <div className="flex flex-col md:flex-row justify-between items-start gap-4">
                                 <div>
                                     <div className="inline-block px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] md:text-xs font-bold text-white mb-2 md:mb-4 border border-white/20">
-                                        {speaker.topic}
+                                        {organizer.topic}
                                     </div>
                                     <h3 className="text-3xl md:text-6xl font-black text-white leading-none mb-1 md:mb-2">
-                                        {speaker.name}
+                                        {organizer.name}
                                     </h3>
                                     <p className="text-base md:text-xl text-gray-300 font-medium">
-                                        {speaker.role}
+                                        {organizer.role}
                                     </p>
                                 </div>
 
                                 <div className="flex flex-row md:flex-col gap-4 w-full md:w-auto justify-between md:justify-start items-end">
                                     <button className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white text-black flex items-center justify-center hover:scale-110 transition-transform">
-                                        <a href={speaker.linkedin} target="_blank" ><FiArrowUpRight className="text-xl md:text-2xl" /></a>
+                                        <a href={organizer.linkedin} target="_blank" ><FiArrowUpRight className="text-xl md:text-2xl" /></a>
                                     </button>
                                     <div className="flex gap-2">
                                         {/* <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white backdrop-blur-sm hover:bg-white hover:text-black transition-colors">
                                             <a href="https://twitter.com/"><FiTwitter /></a>        
                                         </div> */}
                                         <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white backdrop-blur-sm hover:bg-white hover:text-black transition-colors">
-                                            <a href={speaker.linkedin} target="_blank"><FiLinkedin /></a>
+                                            <a href={organizer.linkedin} target="_blank"><FiLinkedin /></a>
                                         </div>
                                     </div>
                                 </div>
@@ -140,4 +140,4 @@ const SpeakersMarquee = () => {
     );
 };
 
-export default SpeakersMarquee;
+export default Organizers;

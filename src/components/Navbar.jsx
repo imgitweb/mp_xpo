@@ -1,14 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import { HiMenuAlt3, HiX } from 'react-icons/hi';
 import { FiChevronDown, FiArrowRight, FiSun, FiMoon, FiDisc as FiDesc } from 'react-icons/fi'; // Added icons
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
-    const [activeDropdown, setActiveDropdown] = useState(null);
+    const navigate = useNavigate();
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light'); // Theme state
     const location = useLocation();
+
+    // Add this inside your Navbar component
+    useEffect(() => {
+        if (location.hash) {
+            const id = location.hash.replace('#', '');
+            const element = document.getElementById(id);
+
+            if (element) {
+                // Use requestAnimationFrame for the most optimized timing
+                requestAnimationFrame(() => {
+                    element.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                });
+            }
+        }
+    }, [location]); // Triggers whenever the path or hash changes
 
     // Handle Theme Change
     useEffect(() => {
@@ -29,23 +47,20 @@ const Navbar = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const toggleDropdown = (name) => {
-        setActiveDropdown(activeDropdown === name ? null : name);
-    };
-
-    const menuItems = {
-        'Event 2026': [
-            { label: 'Agenda', href: '/#agenda' },
-            { label: 'Speakers', href: '/#speakers' },
-            { label: 'Workshops', href: '/workshops' },
-        ],
-        'About Us': [
-            { label: 'Our Story', href: '/about' },
-            { label: 'Team', href: '/team' },
-            { label: 'Newsroom', href: '/news' },
-            { label: 'Sustainability', href: '/sustainability' },
-        ]
-    };
+    // Flattened menu items array
+    const menuItems = [
+        { label: 'Why Join Us', href: '/#why-attend' },
+        { label: 'Agenda', href: '/#agenda' },
+        { label: 'Speakers', href: '/#speakers' },
+        { label: 'Sponsors', href: '/#sponsor' },
+        { label: 'Organizers', href: '/#organizers' },
+        { label: 'Support', href: '/#faq' },
+        // { label: 'Workshops', href: '/workshops' },
+        // { label: 'Our Story', href: '/about' },
+        // { label: 'Team', href: '/team' },
+        // { label: 'Newsroom', href: '/news' },
+        // { label: 'Sustainability', href: '/sustainability' },
+    ];
 
     return (
         <nav className="fixed top-2 left-0 right-0 z-50 flex justify-center px-2 sm:top-6 sm:px-4">
@@ -67,7 +82,7 @@ const Navbar = () => {
                                 className="text-xl sm:text-2xl font-black italic tracking-tighter"
                                 style={{ color: 'var(--color-text)' }}
                             >
-                                MP<span style={{ color: 'var(--color-primary)' }}>STARTUP</span>
+                                BVS<span style={{ color: 'var(--color-primary)' }}>2026</span>
                             </span>
                             <span
                                 className="text-[10px] sm:text-xs font-mono px-2 py-0.5 rounded sm:ml-2 w-fit"
@@ -76,73 +91,28 @@ const Navbar = () => {
                                     color: 'var(--color-text-muted)'
                                 }}
                             >
-                                NOV 19-20, 2026 | BHOPAL
+                                28 Feb - 1 Mar 2026 | Jhansi
                             </span>
                         </Link>
                     </div>
 
-                    {/* Desktop Navigation */}
-                    <div className="hidden md:flex items-center gap-8">
-                        {Object.keys(menuItems).map((key) => (
-                            <div key={key} className="relative">
-                                <button
-                                    className="flex items-center gap-1.5 text-sm font-medium transition-colors hover:opacity-100 opacity-70"
-                                    style={{ color: activeDropdown === key ? 'var(--color-text)' : 'var(--color-text)' }}
-                                    onClick={() => toggleDropdown(key)}
-                                    onMouseEnter={() => setActiveDropdown(key)}
-                                >
-                                    {key}
-                                    <FiChevronDown
-                                        className={`w-4 h-4 transition-transform duration-200 ${activeDropdown === key ? 'rotate-180' : ''}`}
-                                    />
-                                </button>
-
-                                {/* Dropdown Menu */}
-                                {activeDropdown === key && (
-                                    <div
-                                        className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-64 p-2 rounded-xl border overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200"
-                                        onMouseLeave={() => setActiveDropdown(null)}
-                                        style={{
-                                            backgroundColor: 'var(--color-bg-secondary)',
-                                            borderColor: 'var(--color-border)',
-                                            boxShadow: 'var(--shadow-xl)'
-                                        }}
-                                    >
-                                        {menuItems[key].map((item) => (
-                                            <a
-                                                key={item.label}
-                                                href={item.href}
-                                                className="flex items-center justify-between px-4 py-3 rounded-lg group transition-colors"
-                                                style={{ color: 'var(--color-text-secondary)' }}
-                                                onMouseEnter={(e) => {
-                                                    e.currentTarget.style.backgroundColor = 'var(--color-surface)';
-                                                    e.currentTarget.style.color = 'var(--color-text)';
-                                                }}
-                                                onMouseLeave={(e) => {
-                                                    e.currentTarget.style.backgroundColor = 'transparent';
-                                                    e.currentTarget.style.color = 'var(--color-text-secondary)';
-                                                }}
-                                            >
-                                                <span className="text-sm font-medium">
-                                                    {item.label}
-                                                </span>
-                                                <span
-                                                    className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 text-xs"
-                                                    style={{ color: 'var(--color-text-muted)' }}
-                                                >
-                                                    <FiArrowRight />
-                                                </span>
-                                            </a>
-                                        ))}
-                                    </div>
-                                )}
-                            </div>
+                    {/* Desktop Navigation - Refactored to horizontal list */}
+                    <div className="hidden md:flex items-center gap-6 lg:gap-8">
+                        {menuItems.map((item) => (
+                            <a
+                                key={item.label}
+                                href={item.href}
+                                className="text-sm font-medium transition-colors opacity-70 hover:opacity-100"
+                                style={{ color: 'var(--color-text)' }}
+                            >
+                                {item.label}
+                            </a>
                         ))}
                     </div>
 
                     {/* Right Actions & Mobile Toggle */}
                     <div className="flex items-center gap-3 sm:gap-4">
-                        <a
+                        {/* <a
                             href="/login"
                             className="hidden lg:block px-4 py-2 text-sm font-medium rounded-lg border transition-colors hover:opacity-80"
                             style={{
@@ -152,7 +122,7 @@ const Navbar = () => {
                             }}
                         >
                             Investor Portal
-                        </a>
+                        </a> */}
 
                         {/* Theme Toggle */}
                         {/* <button
@@ -167,7 +137,8 @@ const Navbar = () => {
 
                         {/* Dynamic Theme Button */}
                         <button
-                            className="hidden sm:block px-5 py-2 text-sm font-bold rounded-lg transition-transform active:scale-95 shadow-lg"
+                            onClick={() => navigate("/#pricing")}
+                            className="cursor-pointer hidden sm:block px-5 py-2 text-sm font-bold rounded-lg transition-transform active:scale-95 shadow-lg"
                             style={{
                                 backgroundColor: 'var(--color-text)', // Inverted theme look
                                 color: 'var(--color-bg)',
@@ -192,7 +163,7 @@ const Navbar = () => {
                     </div>
                 </div>
 
-                {/* Mobile Menu Dropdown */}
+                {/* Mobile Menu Dropdown - Refactored to flat list */}
                 {mobileMenuOpen && (
                     <div
                         className="md:hidden border-t animate-in slide-in-from-top-2 duration-200"
@@ -201,33 +172,21 @@ const Navbar = () => {
                             backgroundColor: 'var(--color-bg-secondary)'
                         }}
                     >
-                        <div className="p-4 space-y-4 max-h-[80vh] overflow-y-auto">
-                            {Object.keys(menuItems).map((key) => (
-                                <div key={key} className="space-y-2">
-                                    <div
-                                        className="text-xs font-bold uppercase tracking-wider"
-                                        style={{ color: 'var(--color-text-muted)' }}
-                                    >
-                                        {key}
-                                    </div>
-                                    <div className="grid grid-cols-1 gap-1 pl-2">
-                                        {menuItems[key].map((item) => (
-                                            <a
-                                                key={item.label}
-                                                href={item.href}
-                                                className="block py-2 text-sm active:opacity-100 opacity-80"
-                                                style={{ color: 'var(--color-text)' }}
-                                                onClick={() => setMobileMenuOpen(false)}
-                                            >
-                                                {item.label}
-                                            </a>
-                                        ))}
-                                    </div>
-                                </div>
+                        <div className="p-4 space-y-2 max-h-[80vh] overflow-y-auto">
+                            {menuItems.map((item) => (
+                                <a
+                                    key={item.label}
+                                    href={item.href}
+                                    className="block py-3 text-sm font-medium active:opacity-100 opacity-80"
+                                    style={{ color: 'var(--color-text)' }}
+                                    onClick={() => setMobileMenuOpen(false)}
+                                >
+                                    {item.label}
+                                </a>
                             ))}
 
                             <div className="pt-4 border-t flex flex-col gap-3" style={{ borderColor: 'var(--color-border)' }}>
-                                <a
+                                {/* <a
                                     href="/login"
                                     className="block w-full px-4 py-3 text-center text-sm font-medium rounded-lg border hover:opacity-80"
                                     style={{
@@ -236,9 +195,13 @@ const Navbar = () => {
                                     }}
                                 >
                                     Investor Portal
-                                </a>
+                                </a> */}
                                 <button
-                                    className="w-full px-4 py-3 text-center text-sm font-bold rounded-lg transition-transform active:scale-95"
+                                    onClick={() => {
+                                        navigate("/#pricing");
+                                        setMobileMenuOpen(false);
+                                    }}
+                                    className="cursor-pointer w-full px-4 py-3 text-center text-sm font-bold rounded-lg transition-transform active:scale-95"
                                     style={{
                                         backgroundColor: 'var(--color-text)',
                                         color: 'var(--color-bg)'

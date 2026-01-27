@@ -81,7 +81,7 @@ html {
 /* ============================================
    THEME:  Light 
    ============================================ */
-[data-theme="light"] {
+[data-theme="light_demo"] {
   /* Primary Colors */
   --color-primary: #171717;
   --color-primary-hover: #262626;
