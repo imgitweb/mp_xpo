@@ -12,6 +12,7 @@ import Sustainability from './components/Sustainability';
 import NotFound from './components/NotFound';
 import LandingPage from './pages/LandingPage';
 import DesignPreview from './pages/DesignPreview';
+import ScrollToTop from "./layout/scrollToTop";
 
 
 
@@ -24,6 +25,7 @@ const App = () => {
 
   return (
     <Router>
+      <ScrollToTop />
       <div className="min-h-screen flex flex-col font-sans">
         <Routes>
           <Route path="/" element={<LandingPage />} />

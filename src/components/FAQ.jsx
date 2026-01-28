@@ -2,27 +2,62 @@ import React, { useState } from 'react';
 import { FiChevronDown, FiPlus } from 'react-icons/fi';
 
 const faqs = [
-    {
-        question: "Who can attend the MP Startup Expo?",
-        answer: "Everyone! Whether you're a startup founder, investor, student, or just curious about innovation, there's something for you. We have specific tracks for different interests."
-    },
-    {
-        question: "How do I pitch my startup to investors?",
-        answer: "You need to purchase the 'Startup Pro' pass. This grants you access to the 'Pitch Battle' qualifying rounds. Finalists will present on the main stage to a panel of top VCs."
-    },
-    {
-        question: "Is there a student discount?",
-        answer: "Yes! The 'Visitor Pass' is free for students with a valid ID. However, it does not include access to the Investor Lounge or Gala Dinner."
-    },
-    {
-        question: "Where is the venue located?",
-        answer: "The event is happening at the Brilliant Convention Centre, Indore. It's Central India's finest venue with state-of-the-art facilities."
-    },
-    {
-        question: "Can I buy tickets at the venue?",
-        answer: "We recommend booking online as tickets are selling fast and might be sold out. On-spot registration will be subject to availability and higher pricing."
-    }
+  {
+    question: "What is Bundelkhand Venture Summit (BVS) 2026?",
+    answer:
+      "Bundelkhand Venture Summit 2026 is a mega startup and business expo bringing together startups, MSMEs, investors, corporates, government bodies, and industry experts to showcase, pitch, connect, and grow in the Bundelkhand region."
+  },
+  {
+    question: "When and where is BVS 2026 happening?",
+    answer:
+      "BVS 2026 will be held from 28th February to 1st March 2026 in Jhansi, Bundelkhand, at a premium venue designed for large-scale exhibitions, panels, and networking."
+  },
+  {
+    question: "Who can participate in the Startup Expo?",
+    answer:
+      "Startups and MSMEs from sectors like Health & Fitness, Education, Construction, IT & Digital, Finance, Agriculture, Hospitality, Travel, Food, Automobile, Manufacturing, Environment, Media, Content Creation, and Services can participate."
+  },
+  {
+    question: "What are the benefits of participating in BVS 2026?",
+    answer:
+      "Participants get direct access to investors, expert mentorship, panel discussions, media exposure, B2B networking, government and administration connect, product showcasing opportunities, and strong regional brand visibility."
+  },
+  {
+    question: "How can I book a stall at the expo?",
+    answer:
+      "Stalls can be booked through a screening process. Interested startups and businesses need to apply in advance as slots are limited and allocated based on eligibility and category."
+  },
+  {
+    question: "What are the stall pricing tiers at BVS 2026?",
+    answer:
+      "There are three stall tiers: Growth Partner (₹18,000 + GST), Foundation Partner (₹25,000 + GST), and Pinnacle Partner (₹37,000 + GST). Each tier offers different benefits like stall size, seating category, networking access, and branding opportunities."
+  },
+ 
+  {
+    question: "Can startups pitch directly to investors?",
+    answer:
+      "Yes. Through Investor Connect sessions, selected startups can pitch their ideas directly to real investors and decision-makers during the summit."
+  },
+  {
+    question: "Are there panel discussions at the event?",
+    answer:
+      "Yes. BVS 2026 features high-level panel discussions on startup execution, funding vs bootstrapping, incubators & accelerators, MSME growth, FinTech inclusion, manufacturing, tourism, AgriTech, EdTech, and more."
+  },
+
+  {
+    question: "Is there a talent show at the event?",
+    answer:
+      "Yes. The Bundelkhand Talent Show will feature singing, dancing, bands, and instrumental performances, providing a cultural and entertainment experience alongside the business expo."
+  },
+
+  {
+    question: "Are the number of stalls limited?",
+    answer:
+      "Yes. Stall availability is limited and entries are accepted only through a screening process to maintain quality participation and meaningful business interactions."
+  },
+ 
 ];
+
 
 const FAQ = () => {
     const [openIndex, setOpenIndex] = useState(null);
