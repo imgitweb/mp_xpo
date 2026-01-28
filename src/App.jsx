@@ -13,6 +13,8 @@ import NotFound from './components/NotFound';
 import LandingPage from './pages/LandingPage';
 import DesignPreview from './pages/DesignPreview';
 import ScrollToTop from "./layout/scrollToTop";
+import Contact from './components/Contact';
+
 
 
 
@@ -30,6 +32,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<Login />} />
+           <Route path="/contact" element={<> <Navbar /> <Contact /> <Footer /> </>} />
           <Route path="/about" element={<> <Navbar /> <About /> <Footer /> </>} />
           <Route path="/workshops" element={<> <Navbar /> <Workshops /> <Footer /> </>} />
           <Route path="/exhibitor" element={<> <Navbar /> <Exhibitor /> <Footer /> </>} />
@@ -39,6 +42,8 @@ const App = () => {
           <Route path="/design-preview" element={<DesignPreview />} />
           <Route path="/privacy" element={<Legal type="privacy" />} />
           <Route path="/terms" element={<Legal type="terms" />} />
+          
+
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>

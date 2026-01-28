@@ -113,9 +113,6 @@
 
 // export default Features;
 
-
-
-
 import React from "react";
 import {
   FiMic,
@@ -135,7 +132,6 @@ const Features = () => {
       style={{ backgroundColor: "var(--color-bg)" }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
         {/* Section Header */}
         <div className="mb-16 md:mb-24 flex flex-col md:flex-row items-start md:items-end justify-between gap-8">
           <div>
@@ -143,18 +139,25 @@ const Features = () => {
               className="text-4xl sm:text-6xl font-black tracking-tighter mb-4"
               style={{ color: "var(--color-text)" }}
             >
-              WHY <span style={{ color: "var(--color-text-muted)" }}>JOIN JS ?</span>
+              WHY{" "}
+              <span style={{ color: "var(--color-text-muted)" }}>
+                JOIN JS ?
+              </span>
             </h2>
             <p
               className="max-w-md text-lg"
               style={{ color: "var(--color-text-secondary)" }}
             >
-              Where ideas meet opportunity. 2 power-packed days to pitch, connect,
-              learn and scale at Bundelkhand Venture Summit 2026.
+              Where ideas meet opportunity. 2 power-packed days to pitch,
+              connect, learn and scale at Bundelkhand Venture Summit 2026.
             </p>
           </div>
 
           <button
+            onClick={() => {
+              const agendaSection = document.getElementById("agenda");
+              agendaSection?.scrollIntoView({ behavior: "smooth" });
+            }}
             className="px-6 py-3 rounded-full border transition-all hover:bg-white/5 active:scale-95 text-sm font-medium tracking-wide uppercase"
             style={{
               borderColor: "var(--color-border)",
@@ -167,7 +170,6 @@ const Features = () => {
 
         {/* Bento Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
-
           {/* Investor Pitch */}
           <div
             className="md:col-span-2 row-span-2 p-8 sm:p-12 rounded-[2rem] border relative overflow-hidden group"
@@ -190,8 +192,9 @@ const Features = () => {
                   className="max-w-sm"
                   style={{ color: "var(--color-text-muted)" }}
                 >
-                  Pitch directly to investors, government bodies, and decision-makers.
-                  Get real feedback, funding insights & growth opportunities.
+                  Pitch directly to investors, government bodies, and
+                  decision-makers. Get real feedback, funding insights & growth
+                  opportunities.
                 </p>
               </div>
 
@@ -213,7 +216,9 @@ const Features = () => {
           >
             <div className="h-full flex flex-col justify-between">
               <div>
-                <h3 className="text-2xl font-bold mb-2">High-Impact Networking</h3>
+                <h3 className="text-2xl font-bold mb-2">
+                  High-Impact Networking
+                </h3>
                 <p
                   className="text-sm"
                   style={{ color: "var(--color-text-secondary)" }}
@@ -239,10 +244,7 @@ const Features = () => {
             </div>
 
             <h3 className="text-xl font-bold mb-2">Expert Mentorship</h3>
-            <p
-              className="text-sm"
-              style={{ color: "var(--color-text-muted)" }}
-            >
+            <p className="text-sm" style={{ color: "var(--color-text-muted)" }}>
               Learn from industry experts across funding, branding, scaling,
               technology & government schemes.
             </p>
@@ -258,10 +260,7 @@ const Features = () => {
             </div>
 
             <h3 className="text-xl font-bold mb-2">Power Panels</h3>
-            <p
-              className="text-sm"
-              style={{ color: "var(--color-text-muted)" }}
-            >
+            <p className="text-sm" style={{ color: "var(--color-text-muted)" }}>
               Deep-dive discussions on bootstrapping vs funding, MSMEs, FinTech,
               AgriTech, EdTech & manufacturing.
             </p>
@@ -301,10 +300,7 @@ const Features = () => {
             </div>
 
             <h3 className="text-xl font-bold mb-2">Real Growth</h3>
-            <p
-              className="text-sm"
-              style={{ color: "var(--color-text-muted)" }}
-            >
+            <p className="text-sm" style={{ color: "var(--color-text-muted)" }}>
               Media exposure, recognition, B2B meets, partnerships & first-mover
               advantage in Bundelkhand.
             </p>

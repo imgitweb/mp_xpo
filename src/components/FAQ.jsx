@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FiChevronDown, FiPlus } from 'react-icons/fi';
+import { useNavigate } from 'react-router-dom';
 
 const faqs = [
   {
@@ -60,6 +61,7 @@ const faqs = [
 
 
 const FAQ = () => {
+    const navigate = useNavigate()
     const [openIndex, setOpenIndex] = useState(null);
 
     return (
@@ -79,7 +81,7 @@ const FAQ = () => {
                         </h2>
                         <p className="text-lg max-w-sm" style={{ color: 'var(--color-text-secondary)' }}>
                             Everything you need to know about the summit. Can't find an answer?
-                            <a href="#" className="block mt-2 underline" style={{ color: 'var(--color-text)' }}>Chat with support.</a>
+                            <a onClick={()=> navigate("/contact")} className=" cursor-pointer block mt-2 underline" style={{ color: 'var(--color-text)' }}>Chat with support.</a>
                         </p>
                     </div>
 
