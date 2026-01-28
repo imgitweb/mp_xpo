@@ -8,75 +8,77 @@ const COMMUNITY_FORM_URL =
   "https://l.instagram.com/?u=https%3A%2F%2Fforms.gle%2FRHwxx6kqVoq9gTiF8%3Futm_source%3Dig%26utm_medium%3Dsocial%26utm_content%3Dlink_in_bio%26fbclid%3DPAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGn6XdjKk5RHYeSZYgPUQ4TPueinnjkpGHZLoxoJcUCuaYrjrHawvxVFmHQ87I_aem_AamIC1nNa4q5dJqbi4ZPrA&e=AT3duHGo-xGwSlkjA0sgADVz17EgDLnR3l2q-IrtudR-m66Iyt0bx--FI9PVYSTXmsf5bQXAQ2syab9fhG3WTrGJTQdq-6PE2pmICyzvdQ";
 
 const plans = [
-  {
-    name: "VISITOR PASS",
-    price: "₹299",
-    desc: "For students, professionals & general visitors.",
-    features: [
-      "Expo Zone Access",
-      "Open Keynotes & Panels",
-      "Startup Stalls Visit",
-      "Bundelkhand Talent Show",
-      "Digital Entry Pass",
-    ],
-    cta: "Buy Visitor Pass",
-    highlight: false,
-    directForm: true,
-  },
-  {
-    name: "GROWTH PARTNER",
-    price: "₹18,000 + GST",
-    desc: "Base exhibition entry for early-stage startups.",
-    features: [
-      "80 sq.ft General Zone Stall",
-      "1 Silver Seating Pass",
-      "General Session Access",
-      "Concert Entry",
-    ],
-    cta: "Apply Now",
-    highlight: false,
-  },
-  {
-    name: "FOUNDATION PARTNER",
-    price: "₹25,000 + GST",
-    desc: "Mid-tier visibility with priority access.",
-    features: [
-      "100 sq.ft Priority Zone Stall",
-      "Gold Seating (3)",
-      "Networking Lunch",
-      "Priority Entry",
-    ],
-    cta: "Get Foundation",
-    highlight: true,
-  },
-  {
-    name: "PINNACLE PARTNER",
-    price: "₹37,000 + GST",
-    desc: "Top-tier premium exposure & investor attention.",
-    features: [
-      "Prime Stall",
-      "Platinum VIP Seating",
-      "5-Min On-Stage Pitch",
-      "Media Promotion",
-    ],
-    cta: "Become Pinnacle",
-    highlight: false,
-  },
-  {
-    name: "CREATOR / COMMUNITY PASS",
-    price: "Free",
-    desc: "For creators & influencers.",
-    features: [
-      "Creator Lounge",
-      "Collab Zone",
-      "Brand Networking",
-      "Social Media Feature",
-    ],
-    cta: "Join as Creator",
-    highlight: false,
-    directForm: true,
-    formUrl: COMMUNITY_FORM_URL,
-  },
+    {
+        name: "VISITOR PASS",
+        price: "₹299",
+        desc: "For students, professionals & general visitors.",
+        features: [
+            "Expo Zone Access",
+            "Open Keynotes & Panels",
+            "Startup Stalls Visit",
+            "Bundelkhand Talent Show",
+            "Digital Entry Pass"
+        ],
+        cta: "Buy Visitor Pass",
+        highlight: false,
+        directForm: true
+    },
+    {
+        name: "GROWTH PARTNER",
+        price: "₹18,000 + GST",
+        desc: "Base exhibition entry for early-stage startups.",
+        features: [
+            "80 sq.ft General Zone Stall",
+            "1 Silver Seating Pass",
+            "General Session Access",
+            "Concert Entry"
+        ],
+        cta: "Apply Now",
+        highlight: false,
+        img: "/stall-img/stall1-img.png"
+    },
+    {
+        name: "FOUNDATION PARTNER",
+        price: "₹25,000 + GST",
+        desc: "Mid-tier visibility with priority access.",
+        features: [
+            "100 sq.ft Priority Zone Stall",
+            "Gold Seating (3)",
+            "Networking Lunch",
+            "Priority Entry"
+        ],
+        cta: "Get Foundation",
+        highlight: true,
+        img: "/stall-img/stall2-img.png"
+    },
+    {
+        name: "PINNACLE PARTNER",
+        price: "₹37,000 + GST",
+        desc: "Top-tier premium exposure & investor attention.",
+        features: [
+            "Prime Stall",
+            "Platinum VIP Seating",
+            "5-Min On-Stage Pitch",
+            "Media Promotion"
+        ],
+        cta: "Become Pinnacle",
+        highlight: false,
+        img: "/stall-img/stall3-img.png"
+    },
+    {
+        name: "CREATOR / COMMUNITY PASS",
+        price: "Free",
+        desc: "For creators & influencers.",
+        features: [
+            "Creator Lounge",
+            "Collab Zone",
+            "Brand Networking",
+            "Social Media Feature"
+        ],
+        cta: "Join as Creator",
+        highlight: false,
+        directForm: true
+    }
 ];
 
 const Pricing = () => {
