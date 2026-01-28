@@ -190,7 +190,8 @@ const plans = [
             "Concert Entry"
         ],
         cta: "Apply Now",
-        highlight: false
+        highlight: false,
+        img: "/stall-img/stall1-img.png"
     },
     {
         name: "FOUNDATION PARTNER",
@@ -203,7 +204,8 @@ const plans = [
             "Priority Entry"
         ],
         cta: "Get Foundation",
-        highlight: true
+        highlight: true,
+        img: "/stall-img/stall2-img.png"
     },
     {
         name: "PINNACLE PARTNER",
@@ -216,7 +218,8 @@ const plans = [
             "Media Promotion"
         ],
         cta: "Become Pinnacle",
-        highlight: false
+        highlight: false,
+        img: "/stall-img/stall3-img.png"
     },
     {
         name: "CREATOR / COMMUNITY PASS",
@@ -317,7 +320,7 @@ const Pricing = () => {
 
                             <button
                                 onClick={() => handleClick(plan)}
-                                className="w-full py-3 rounded-xl font-bold text-sm"
+                                className="cursor-pointer w-full py-3 rounded-xl font-bold text-sm"
                                 style={{
                                     backgroundColor: plan.highlight
                                         ? 'var(--color-text)'

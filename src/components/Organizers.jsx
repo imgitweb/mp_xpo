@@ -4,11 +4,11 @@ import { FiArrowUpRight, FiLinkedin, FiTwitter } from 'react-icons/fi';
 const organizers = [
     {
         id: 1,
-        name: "Mr. Amit Singh",
-        role: "MD at PITAMBRA INDUSTRIES Jhansi™",
-        topic: "Ministry of Women & Child Development",
-        image: "/organizers/Amit.jpeg",
-        linkedin: "https://www.linkedin.com/in/nabomitam/"
+        name: "Mr. Apurv Gupta",
+        role: "Director Dainik Jagran Jhansi",
+        topic: "focused on early-stage investments in tech, including Fintech, IoT, and SMAC",
+        image: "/organizers/Apurv.jpeg",
+        linkedin: "https://www.linkedin.com/posts/risejhansi_fridaywithfounder-risejhansi-apurvgupta-activity-7212034832678199297-acWY/"
     },
     {
         id: 2,
@@ -16,7 +16,7 @@ const organizers = [
         role: "Director Dynesty Infradevelopers",
         topic: "Global Healthcare Sector",
         image: "/organizers/Rahul.jpeg",
-        linkedin: "https://www.linkedin.com/in/dr-abhay-sinha-a82a9019/"
+        linkedin: "https://www.linkedin.com/in/rahul-richhariya-30791b14/?originalSubdomain=in"
     },
     {
         id: 3,
@@ -24,15 +24,15 @@ const organizers = [
         role: "President – Rotary Club of Jhansi Rani",
         topic: "entrepreneur, angel investor, and venture capitalist with 13+ years of experience mentoring and backing early-stage startups",
         image: "/organizers/Akanksha.jpeg",
-        linkedin: "https://www.linkedin.com/in/mahavir-pratap-sharma-26476915/"
+        linkedin: "https://www.linkedin.com/in/dr-akanksha-richhariya-47a48a173/?originalSubdomain=in"
     },
     {
         id: 4,
-        name: "Mr. Apurv Gupta",
-        role: "Director Dainik Jagran Jhansi",
-        topic: "focused on early-stage investments in tech, including Fintech, IoT, and SMAC",
-        image: "/organizers/Apurv.jpeg",
-        linkedin: "https://www.linkedin.com/in/aniljoshi74/"
+        name: "Mr. Amit Singh",
+        role: "MD at PITAMBRA INDUSTRIES Jhansi™",
+        topic: "Ministry of Women & Child Development",
+        image: "/organizers/Amit.jpeg",
+        linkedin: "https://www.linkedin.com/in/amit-singh-3988b5180/?originalSubdomain=in"
     },
     {
         id: 5,
@@ -40,7 +40,7 @@ const organizers = [
         role: "CEO Hiscon Industries",
         topic: "investment into a ₹150+ crore empire, popularizing tea served in traditional kulhads",
         image: "/organizers/raju.jpg",
-        linkedin: "https://www.linkedin.com/in/anubhavdubey/"
+        linkedin: "https://www.linkedin.com/in/raju-parwar-a06594326/"
     }
 ];
 

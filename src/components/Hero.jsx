@@ -102,9 +102,11 @@ const Hero = () => {
                     className="max-w-2xl mx-auto text-lg sm:text-xl leading-relaxed font-light"
                     style={{ color: 'var(--color-text-muted)' }}
                 >
-                    Join 5000+ founders, investors, and visionaries shaping the future.
+                    Where Ideas Meet Opportunity. Join Bundelkhand’s first mega business summit
                     <br className="hidden sm:block" />
-                    The stage is set for the next big breakthrough.
+                    {/* your brand, pitch to real investors, and explore untapped market potential. */}
+                    {/* <br className="hidden sm:block" /> */}
+                    Showcase. Pitch. Connect. Grow.
                 </p>
 
                 {/* CTA Buttons */}
