@@ -12,7 +12,7 @@ const LandingPage = () => (
       <Stats />
       <Features />
       {/* <Speakers /> */}
-      <SpeakersMarquee />
+      {/* <SpeakersMarquee /> */}
                <SponsorsGrid />
       <Agenda />
        <Panel />

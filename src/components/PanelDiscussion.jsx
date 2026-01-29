@@ -99,7 +99,7 @@ const Panel = () => {
               className="text-4xl sm:text-6xl font-black tracking-tighter mb-4"
               style={{ color: "var(--color-text)" }}
             >
-              Ideas <span style={{ color: "var(--color-text-muted)" }}>to Impact</span>
+              IDEAS <span style={{ color: "var(--color-text-muted)" }}>TO IMPACT</span>
             </h2>
             <p
               className="max-w-md text-lg"
