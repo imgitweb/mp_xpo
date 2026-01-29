@@ -14,6 +14,7 @@ import LandingPage from './pages/LandingPage';
 import DesignPreview from './pages/DesignPreview';
 import ScrollToTop from "./layout/scrollToTop";
 import Contact from './components/Contact';
+import VisitorPass from './components/VisitorPassForm';
 
 
 
@@ -42,6 +43,7 @@ const App = () => {
           <Route path="/design-preview" element={<DesignPreview />} />
           <Route path="/privacy" element={<Legal type="privacy" />} />
           <Route path="/terms" element={<Legal type="terms" />} />
+          <Route path="/visitor-pass" element={<> <Navbar /> <VisitorPass/> <Footer /> </>} />
           
 
           <Route path="*" element={<NotFound />} />

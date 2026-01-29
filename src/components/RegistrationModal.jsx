@@ -18,7 +18,7 @@ const RegistrationModal = ({ isOpen, onClose, plan }) => {
                         onClick={onClose}
                         className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm px-4 flex items-end sm:items-center justify-center"
                     >
-                        {/* Modal Container - INCREASED WIDTH */}
+                        
                         <motion.div
                             initial={{ y: "100%", opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
@@ -31,7 +31,7 @@ const RegistrationModal = ({ isOpen, onClose, plan }) => {
                                 background: 'linear-gradient(145deg, var(--color-surface), var(--color-bg))'
                             }}
                         >
-                            {/* Decorative Accent */}
+                            
                             <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-transparent via-[var(--color-text)] to-transparent opacity-20" />
 
                             {/* GRID LAYOUT: Content Left + Image Right */}

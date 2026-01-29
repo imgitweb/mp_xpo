@@ -51,7 +51,7 @@ const Navbar = () => {
     const menuItems = [
         { label: 'Why Join Us', href: '/#why-attend' },
         { label: 'Agenda', href: '/#agenda' },
-        { label: 'Speakers', href: '/#speakers' },
+        // { label: 'Speakers', href: '/#speakers' },
         { label: 'Sponsors', href: '/#sponsor' },
         { label: 'Organizers', href: '/#organizers' },
         { label: 'Support', href: '/#faq' },
@@ -77,14 +77,12 @@ const Navbar = () => {
                 <div className="flex items-center justify-between px-4 py-3 sm:px-6">
                     {/* Logo */}
                     <div className="flex items-center gap-4">
-                        <Link to="/" className="flex flex-col sm:flex-row sm:items-center gap-1 group">
-                            <span
-                                className="text-xl sm:text-2xl font-black italic tracking-tighter"
-                                style={{ color: 'var(--color-text)' }}
-                            >
-                                BVS<span style={{ color: 'var(--color-primary)' }}>2026</span>
-                            </span>
-                            <span
+                        <Link to="/" className="flex flex-col sm:flex-row sm:items-center gap- group">
+                            <div className='overflow-hidden h-12 flex items-center justify-center w-30 '>
+                             {/* BVS<span style={{ color: 'var(--color-primary)' }}>2026</span> */}
+                                <img className='-mb-4 ' src="/logo/bvs_logo.png" alt="" />
+                            </div>
+                            {/* <span
                                 className="text-[10px] sm:text-xs font-mono px-2 py-0.5 rounded sm:ml-2 w-fit"
                                 style={{
                                     backgroundColor: 'var(--color-surface)',
@@ -92,7 +90,7 @@ const Navbar = () => {
                                 }}
                             >
                                 28 Feb - 1 Mar 2026 | Jhansi
-                            </span>
+                            </span> */}
                         </Link>
                     </div>
 

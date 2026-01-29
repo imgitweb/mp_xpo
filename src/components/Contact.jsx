@@ -10,6 +10,8 @@ const Contact = () => {
     message: "",
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const contactDetails = [
     {
       label: "Call Us",
@@ -35,7 +37,7 @@ const Contact = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!formData.name || !formData.email || !formData.message) {
@@ -43,14 +45,36 @@ const Contact = () => {
       return;
     }
 
-    // 👉 yahan API / backend integration aa sakta hai
-    toast.success("Message sent successfully 🚀");
+    setIsSubmitting(true);
 
-    setFormData({
-      name: "",
-      email: "",
-      message: "",
-    });
+    try {
+      const response = await fetch("/api/contacts", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || "Failed to send message");
+      }
+
+      toast.success(data.message || "Message sent successfully 🚀");
+
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Contact submit error:", error);
+      toast.error(error.message || "Server error, try again later");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -59,7 +83,6 @@ const Contact = () => {
       className="py-20 sm:py-28 relative overflow-hidden"
       style={{ backgroundColor: "var(--color-bg)" }}
     >
-      {/* Toast Container */}
       <Toaster
         position="top-right"
         toastOptions={{
@@ -71,7 +94,6 @@ const Contact = () => {
         }}
       />
 
-      {/* Background Glow */}
       <div
         className="absolute top-0 right-0 w-96 h-96 opacity-20 pointer-events-none blur-3xl rounded-full"
         style={{ backgroundColor: "var(--color-primary)" }}
@@ -94,8 +116,8 @@ const Contact = () => {
             className="max-w-xl mx-auto text-lg"
             style={{ color: "var(--color-text-secondary)" }}
           >
-            Have questions about BVS 2026? We are here to help you grow your venture
-            in Bundelkhand.
+            Have questions about BVS 2026? We are here to help you grow your
+            venture in Bundelkhand.
           </p>
         </motion.div>
 
@@ -166,8 +188,12 @@ const Contact = () => {
                 placeholder="Full Name"
                 value={formData.name}
                 onChange={handleChange}
+                disabled={isSubmitting}
                 className="p-4 rounded-xl border bg-transparent outline-none"
-                style={{ borderColor: "var(--color-border)", color: "var(--color-text)" }}
+                style={{
+                  borderColor: "var(--color-border)",
+                  color: "var(--color-text)",
+                }}
               />
 
               <input
@@ -176,8 +202,12 @@ const Contact = () => {
                 placeholder="Email Address"
                 value={formData.email}
                 onChange={handleChange}
+                disabled={isSubmitting}
                 className="p-4 rounded-xl border bg-transparent outline-none"
-                style={{ borderColor: "var(--color-border)", color: "var(--color-text)" }}
+                style={{
+                  borderColor: "var(--color-border)",
+                  color: "var(--color-text)",
+                }}
               />
 
               <textarea
@@ -186,19 +216,26 @@ const Contact = () => {
                 placeholder="Your Message"
                 value={formData.message}
                 onChange={handleChange}
+                disabled={isSubmitting}
                 className="md:col-span-2 p-4 rounded-xl border bg-transparent outline-none resize-none"
-                style={{ borderColor: "var(--color-border)", color: "var(--color-text)" }}
+                style={{
+                  borderColor: "var(--color-border)",
+                  color: "var(--color-text)",
+                }}
               />
 
               <button
                 type="submit"
-                className="md:col-span-2 px-8 py-4 rounded-xl font-bold flex items-center gap-2 justify-center active:scale-95"
+                disabled={isSubmitting}
+                className="md:col-span-2 px-8 py-4 rounded-xl font-bold flex items-center gap-2 justify-center active:scale-95 transition-opacity"
                 style={{
                   backgroundColor: "var(--color-text)",
                   color: "var(--color-bg)",
+                  opacity: isSubmitting ? 0.7 : 1,
                 }}
               >
-                Send Message <Send className="w-4 h-4" />
+                {isSubmitting ? "Sending..." : "Send Message"}
+                <Send className="w-4 h-4" />
               </button>
             </form>
           </motion.div>
