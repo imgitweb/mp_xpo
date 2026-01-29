@@ -1,9 +1,8 @@
 import { About, Agenda, FAQ, Features, Footer, Hero, Navbar, Pricing, Speakers, Stats } from "../components";
 import Organizers from "../components/Organizers";
+import Panel from "../components/PanelDiscussion";
 import SpeakersMarquee from "../components/SpeakersMarquee";
 import SponsorsGrid from "../components/SponsorsGrid";
-
-
 
 const LandingPage = () => (
   <>
@@ -16,10 +15,11 @@ const LandingPage = () => (
       <SpeakersMarquee />
                <SponsorsGrid />
       <Agenda />
+       <Panel />
    
       <Pricing />
 
-      <Organizers />
+      {/* <Organizers /> */}
       {/* <Sponsors /> */}
 
       <About />
