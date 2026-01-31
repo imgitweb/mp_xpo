@@ -127,7 +127,7 @@ import { RiStore3Line } from "react-icons/ri";
 const Features = () => {
   return (
     <section
-      id="why-attend"
+      id="why-join"
       className="py-24 sm:py-32 relative overflow-hidden"
       style={{ backgroundColor: "var(--color-bg)" }}
     >

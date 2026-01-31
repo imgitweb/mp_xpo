@@ -16,11 +16,8 @@ import ScrollToTop from "./layout/scrollToTop";
 import Contact from './components/Contact';
 import VisitorPass from './components/VisitorPassForm';
 
-
-
-
 const App = () => {
-  // Global Theme Initialization
+
   React.useEffect(() => {
     const savedTheme = localStorage.getItem('theme') || 'dark';
     document.documentElement.setAttribute('data-theme', savedTheme);
@@ -33,6 +30,8 @@ const App = () => {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/visitor-pass" element={<> <Navbar /> <VisitorPass /> <Footer /> </>} />
+          
            <Route path="/contact" element={<> <Navbar /> <Contact /> <Footer /> </>} />
           <Route path="/about" element={<> <Navbar /> <About /> <Footer /> </>} />
           <Route path="/workshops" element={<> <Navbar /> <Workshops /> <Footer /> </>} />

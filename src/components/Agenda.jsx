@@ -1,138 +1,120 @@
-import React, { useState } from "react";
+import React from "react";
 
-const schedule = {
-  day1: [
+const Agenda = () => {
+  const agendaItems = [
     {
-      title: "Registration & Networking",
-      type: "Entry",
-      desc: "Delegate registration and badge collection for the first mega business summit of Bundelkhand.",
+      title: "Exhibition & Startup Showcase",
+      description:
+        "Discover innovative startups, products, and services under one roof.",
+      points: [
+        "Live Product Demonstrations",
+        "Interact with Founders & Brands",
+        "Business & Startup Networking",
+      ],
+      image: "/agenda/stall.png",
     },
-    {
-      title: "Execution Over Ideas - What Really Builds Startups",
-      type: "Panel",
-      desc: "Building the right team, executing consistently, pivoting at the right time, and focusing on operations over hype.",
-    },
-    {
-      title: "Incubators, Accelerators & Ecosystem Access",
-      type: "Panel",
-      desc: "How startups from Tier-2/Tier-3 cities can leverage incubators, mentors, and government support.",
-    },
-    {
-      title: "Bootstrapping vs Funding - Which Path Is Right?",
-      type: "Panel",
-      desc: "Choosing between self-funded growth and external investment with real-world perspectives.",
-    },
-    {
-      title: "FinTech for MSMEs & Financial Inclusion",
-      type: "Panel",
-      desc: "How digital payments, lending and financial tools are transforming small businesses beyond metros.",
-    },
-    {
-      title: "Building Trust, Brand & Growth",
-      type: "Panel",
-      desc: "Using social responsibility to build credibility, community impact, and long-term brand value.",
-    },
-    {
-      title: "Celebrity Musical Concert Night",
-      type: "Event",
-      desc: "High-energy musical night featuring celebrity performances and networking dinner.",
-    },
-  ],
 
-  day2: [
     {
-      title: "Health Tech for Bharat",
-      type: "Panel",
-      desc: "Affordable, accessible, and trustworthy healthcare solutions for smaller cities.",
+      title: "Panel Discussion",
+      description: "Learn from experts and industry leaders.",
+      points: [
+        "Listen to top industry professionals.",
+        "Enquire to register for a panel.",
+      ],
+      image: "/agenda/paneldiscussion.jpg",
     },
     {
-      title: "AgriTech & Rural Innovation",
-      type: "Panel",
-      desc: "From farm to market: scaling solutions for farmers, supply chains, and rural adoption.",
+      title: "Investor Connect",
+      description: "Pitch your startup to real investors.",
+      points: ["Meet Investors", "Pitch Your Startup Directly"],
+      image:
+        "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80&w=400",
     },
     {
-      title: "EdTech & Employability",
-      type: "Panel",
-      desc: "Bridging education and jobs for youth in Tier-2 regions.",
+      title: "Become a Sponsor",
+      description: "Promote your brand and build strong partnerships.",
+      points: [
+        "Brand Promotion",
+        "Maximum Visibility",
+        "Partnership Opportunities",
+      ],
+      image:
+        "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=400",
     },
     {
-      title: "Tourism, Hospitality & Experience Economy",
-      type: "Panel",
-      desc: "Turning Destinations into Businesses: Seasonality, Scale & Sustainability.",
-    },
-    {
-      title: "Manufacturing, MSMEs & Industrial Innovation",
-      type: "Panel",
-      desc: "Cost Advantage, Local Talent & Scale: The Tier-2 Manufacturing Edge.",
+      title: "Concert",
+      description:
+        "An evening filled with music and energy to celebrate the spirit of entrepreneurship.",
+      points: ["Live Music", "DJ Night"],
+      image:
+        "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&q=80&w=800",
+      isWide: true,
     },
     {
       title: "Bundelkhand Talent Show",
-      type: "Show",
-      desc: "Talent hunt finale featuring singing, dancing, musical bands, and instruments.",
+      description:
+        "A platform to showcase local talent and creativity to a massive audience.",
+      points: ["Cultural Performance", "Talent Hunt"],
+      image: "/agenda/talent.jpeg",
+      isWide: true,
     },
-  ],
-};
-
-const Agenda = () => {
-  const [activeTab, setActiveTab] = useState("day1");
+  ];
 
   return (
     <section
       id="agenda"
-      className="py-24 sm:py-32 relative"
-      style={{ backgroundColor: "var(--color-bg)" }}
+      className="py-24 px-6 relative overflow-hidden"
+      style={{ backgroundColor: "var(--color-bg, #0a0a0a)" }}
     >
-      <div
-        className="absolute inset-0 opacity-30 pointer-events-none"
-        style={{
-          backgroundImage: "radial-gradient(circle at 100% 0%, var(--color-primary-light), transparent 40%)",
-        }}
-      />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#737373] rounded-full blur-[120px] -z-10"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="mb-16 md:mb-24 flex flex-col md:flex-row items-start md:items-end justify-between gap-8">
-          <div>
-            <h2 className="text-4xl sm:text-6xl font-black tracking-tighter mb-4" style={{ color: "var(--color-text)" }}>
-              Event <span style={{ color: "var(--color-text-muted)" }}>Agenda.</span>
-            </h2>
-            <p className="max-w-md text-lg" style={{ color: "var(--color-text-secondary)" }}>
-              Bundelkhand Venture Summit 2026 – Two days of innovation and growth.
-            </p>
-          </div>
-
-          <div className="flex p-1 rounded-full border backdrop-blur-md" style={{ borderColor: "var(--color-border)", backgroundColor: "var(--color-surface)" }}>
-            {["day1", "day2"].map((day) => (
-              <button
-                key={day}
-                onClick={() => setActiveTab(day)}
-                className="px-6 py-2 rounded-full text-sm font-bold tracking-wide transition-all duration-300 relative overflow-hidden"
-                style={{ color: activeTab === day ? "var(--color-bg)" : "var(--color-text-muted)" }}
-              >
-                <div className={`absolute inset-0 transition-opacity duration-300 ${activeTab === day ? "opacity-100" : "opacity-0"}`} style={{ backgroundColor: "var(--color-text)" }} />
-                <span className="relative z-10">{day === "day1" ? "28 FEB" : "01 MAR"}</span>
-              </button>
-            ))}
-          </div>
+      <div className="max-w-7xl mx-auto">
+        <div className="mb-20 text-left">
+          <h2 className="text-4xl md:text-6xl font-black mb-4 tracking-tighter text-white">
+            EVENT <span className="text-[#737373] opacity-90">AGENDA</span>
+          </h2>
+          <div className="w-24 h-2 bg-[#737373]  rounded-full"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {schedule[activeTab].map((item, idx) => (
-            <div key={idx} className="group relative p-8 rounded-3xl border transition-all duration-300 hover:-translate-y-1 overflow-hidden" style={{ backgroundColor: "var(--color-surface)", borderColor: "var(--color-border)" }}>
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: "radial-gradient(circle at top right, var(--color-primary-light), transparent 70%)" }} />
-              <div className="relative z-10">
-                <div className="flex items-start justify-between mb-8">
-                  <span className="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest border" style={{ borderColor: "var(--color-border)", color: "var(--color-text-secondary)", backgroundColor: "var(--color-bg)" }}>
-                    {item.type}
-                  </span>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {agendaItems.map((item, index) => (
+            <div
+              key={index}
+              className="group relative overflow-hidden rounded-2xl border border-white/5 bg-white/[0.02] backdrop-blur-sm transition-all duration-500 hover:border-gray-600/50 hover:bg-white/[0.04]"
+            >
+              <div className="flex flex-col lg:flex-row h-full">
+                <div className="flex-1 p-8 md:p-10">
+                  <h3 className="text-3xl font-bold mb-4 text-white group-hover:text-[#737373]  transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="mb-8 text-sm md:text-base leading-relaxed text-[#737373] font-light">
+                    {item.description}
+                  </p>
+                  <ul className="space-y-4">
+                    {item.points.map((point, i) => (
+                      <li
+                        key={i}
+                        className="flex items-center gap-3 text-sm text-[#737373] "
+                      >
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#737373]  shadow-[0_0_8px_rgba(234,88,12,0.8)]"></span>
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <h3 className="text-2xl font-bold mb-2" style={{ color: "var(--color-text)" }}>{item.title}</h3>
-                <p className="text-sm leading-relaxed" style={{ color: "var(--color-text-muted)" }}>{item.desc}</p>
+
+                <div className="lg:w-2/5 relative h-64 lg:h-auto overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-transparent to-transparent z-10 hidden lg:block"></div>
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700"
+                  />
+                </div>
               </div>
-              <div className="absolute bottom-0 left-0 w-full h-1 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" style={{ backgroundColor: "var(--color-primary)" }} />
             </div>
           ))}
         </div>
-       
       </div>
     </section>
   );

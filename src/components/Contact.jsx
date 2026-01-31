@@ -227,7 +227,7 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="md:col-span-2 px-8 py-4 rounded-xl font-bold flex items-center gap-2 justify-center active:scale-95 transition-opacity"
+                className="cursor-pointer md:col-span-2 px-8 py-4 rounded-xl font-bold flex items-center gap-2 justify-center active:scale-95 transition-opacity"
                 style={{
                   backgroundColor: "var(--color-text)",
                   color: "var(--color-bg)",

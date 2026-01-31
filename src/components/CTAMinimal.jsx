@@ -9,14 +9,14 @@ const CTAMinimal = () => {
                 <div className="relative rounded-[3rem] overflow-hidden border p-8 md:p-20"
                     style={{ borderColor: 'var(--color-border)', backgroundColor: 'var(--color-surface)' }}>
 
-                    {/* Background Pattern */}
+                    
                     <div className="absolute inset-0 opacity-10"
                         style={{ backgroundImage: 'radial-gradient(var(--color-text) 1px, transparent 1px)', backgroundSize: '40px 40px' }}>
                     </div>
 
                     <div className="relative z-10 grid lg:grid-cols-2 gap-16 items-center">
 
-                        {/* Left: Copy */}
+                      
                         <div>
                             <span className="inline-block px-4 py-1.5 rounded-full bg-white text-black text-xs font-bold uppercase tracking-widest mb-6 animate-pulse">
                                 Last 50 Early Bird Tickets

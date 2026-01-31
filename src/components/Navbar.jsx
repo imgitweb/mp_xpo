@@ -49,7 +49,7 @@ const Navbar = () => {
 
     // Flattened menu items array
     const menuItems = [
-        { label: 'Why Join Us', href: '/#why-attend' },
+        { label: 'Why Join Us', href: '/#why-join' },
         { label: 'Agenda', href: '/#agenda' },
         // { label: 'Speakers', href: '/#speakers' },
         { label: 'Sponsors', href: '/#sponsor' },
