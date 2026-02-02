@@ -77,7 +77,7 @@ const Footer = () => {
             >
               <li className="flex items-center gap-3">
                 <FaMapMarkerAlt />
-                Jhansi, Bundelkhand • 28 Feb – 1 March 2026
+                Jai Academy Shivpuri – Nagra Road, Jhansi, Uttar Pradesh, India
               </li>
               <li className="flex items-center gap-3">
                 <FaPhoneAlt />
@@ -209,23 +209,28 @@ const Footer = () => {
                 href="https://www.instagram.com/bundelkhandventuresummit"
                 target="_blank"
                 rel="noreferrer"
-                className="w-10 h-10 rounded-full border flex items-center justify-center hover:bg-white hover:text-black transition"
+                className="
+                w-10 h-10 rounded-full border
+                flex items-center justify-center
+                transition
+                hover:bg-white hover:text-black
+                text-[var(--color-text)]
+  "
                 style={{
                   borderColor: "var(--color-border)",
-                  color: "var(--color-text)",
                 }}
               >
-                <FaInstagram />
+                <FaInstagram className="text-inherit" />
               </a>
 
               <a
                 href="https://www.linkedin.com/company/bundelkhandexpo"
                 target="_blank"
                 rel="noreferrer"
-                className="w-10 h-10 rounded-full border flex items-center justify-center hover:bg-white hover:text-black transition"
+                className="w-10 h-10 rounded-full border flex items-center justify-center transition hover:bg-white hover:text-black text-[var(--color-text)]"
+               
                 style={{
                   borderColor: "var(--color-border)",
-                  color: "var(--color-text)",
                 }}
               >
                 <FaLinkedin />

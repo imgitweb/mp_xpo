@@ -3,73 +3,115 @@ import React, { useState } from "react";
 const schedule = {
   day1: [
     {
-      time: "11:00 AM – 12:00 PM",
-      title: "Execution Over Ideas – What Really Builds Startups",
-      type: "Panel",
-      desc: "Building the right team, executing consistently, pivoting at the right time, and focusing on operations over hype.",
+      time: "09:00 AM – 10:00 AM",
+      title: "Registration Opens",
+      type: "Expo",
+      desc: "Delegate registration and entry to the Startup Expo.",
     },
     {
-      time: "12:00 PM – 01:00 PM",
+      time: "10:00 AM – 10:30 AM",
+      title: "Ribbon Cutting & Startup Expo Opening",
+      type: "Ceremony",
+      desc: "Formal inauguration of BVS 2026 and startup exhibition.",
+    },
+    {
+      time: "10:30 AM – 11:30 AM",
+      title: "Startup Expo Walkthrough & Networking",
+      type: "Networking",
+      desc: "Meet founders, startups, investors, and ecosystem leaders.",
+    },
+    {
+      time: "11:30 AM – 01:30 PM",
+      title: "Grand Inaugural Ceremony & Keynote Address",
+      type: "Keynote",
+      desc: "Opening ceremony with keynote speakers and vision setting.",
+    },
+    {
+      time: "01:30 PM – 02:30 PM",
       title: "Incubators, Accelerators & Ecosystem Access",
       type: "Panel",
       desc: "How startups from Tier-2/Tier-3 cities can leverage incubators, mentors, and government support.",
     },
     {
-      time: "01:00 PM – 02:00 PM",
-      title: "Bootstrapping vs Funding – Which Path Is Right?",
-      type: "Panel",
-      desc: "Choosing between self-funded growth and external investment with real-world perspectives.",
+      time: "02:30 PM – 03:30 PM",
+      title: "Networking Lunch",
+      type: "Networking",
+      desc: "Curated networking lunch with investors, founders, and partners.",
     },
     {
-      time: "03:00 PM – 04:00 PM",
-      title: "Building Trust, Brand & Growth through Responsibility",
-      type: "Panel",
-      desc: "Using social responsibility to build credibility, community impact, and long-term brand value.",
+      time: "03:30 PM – 06:30 PM",
+      title: "Investor Connect – Shark Tank Style Pitching",
+      type: "Investor Connect",
+      desc: "Live startup pitching with investors and real-time feedback.",
     },
     {
-      time: "04:00 PM – 05:00 PM",
-      title: "FinTech for MSMEs & Financial Inclusion",
-      type: "Panel",
-      desc: "How digital payments, lending and financial tools are transforming small businesses beyond metros.",
+      time: "07:00 PM – 09:00 PM",
+      title: "Bundelkhand Talent Show (BTS) – Day 1",
+      type: "Cultural",
+      desc: "Showcasing regional talent through performances and music.",
     },
   ],
 
   day2: [
     {
+      time: "09:30 AM – 10:00 AM",
+      title: "Expo & Networking Opens",
+      type: "Expo",
+      desc: "Startup expo opens with investor and delegate networking.",
+    },
+    {
       time: "10:00 AM – 11:00 AM",
       title: "HealthTech for Bharat",
       type: "Panel",
-      desc: "Affordable, accessible, and trustworthy healthcare solutions for smaller cities.",
+      desc: "Affordable, accessible, and scalable healthcare solutions for India.",
     },
     {
       time: "11:00 AM – 12:00 PM",
       title: "Neurodivergence – Diagnosis, Early Intervention & Acceptance",
       type: "Panel",
-      desc: "Understanding neurodiversity, early diagnosis, inclusive education, and workplace acceptance.",
+      desc: "Understanding neurodiversity, inclusion, and early care systems.",
     },
     {
       time: "12:00 PM – 01:00 PM",
       title: "AgriTech & Rural Innovation",
       type: "Panel",
-      desc: "From farm to market: scaling solutions for farmers, supply chains, and rural adoption.",
+      desc: "Innovations empowering farmers, supply chains, and rural India.",
+    },
+    {
+      time: "01:00 PM – 02:00 PM",
+      title: "Networking Lunch",
+      type: "Networking",
+      desc: "Investor, founder, and policy-maker networking over lunch.",
     },
     {
       time: "02:00 PM – 03:00 PM",
       title: "EdTech & Employability",
       type: "Panel",
-      desc: "Bridging education and jobs for youth in Tier-2 regions.",
+      desc: "Bridging education, skills, and jobs for India’s youth.",
     },
     {
       time: "03:00 PM – 04:00 PM",
       title: "Tourism, Hospitality & Experience Economy",
       type: "Panel",
-      desc: "Turning destinations into businesses through experience-led growth.",
+      desc: "Building destination-driven businesses and experience-led growth.",
     },
     {
       time: "04:00 PM – 05:00 PM",
       title: "Manufacturing, MSMEs & Industrial Innovation",
       type: "Panel",
-      desc: "Cost advantage, local talent, and scalable manufacturing beyond metros.",
+      desc: "Scaling manufacturing using local talent and infrastructure.",
+    },
+    {
+      time: "05:00 PM – 07:00 PM",
+      title: "Bundelkhand Excellence Awards & Closing Ceremony",
+      type: "Awards",
+      desc: "Honouring startups, innovators, and ecosystem contributors.",
+    },
+    {
+      time: "07:30 PM Onwards",
+      title: "Grand Closing Celebration & Celebrity Musical Concert",
+      type: "Concert",
+      desc: "Opening act followed by Dev Negi live performance & DJ night.",
     },
   ],
 };
@@ -92,24 +134,25 @@ const Panel = () => {
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Heading */}
         <div className="mb-16 md:mb-24 flex flex-col md:flex-row items-start md:items-end justify-between gap-8">
           <div>
             <h2
               className="text-4xl sm:text-6xl font-black tracking-tighter mb-4"
               style={{ color: "var(--color-text)" }}
             >
-              IDEAS <span style={{ color: "var(--color-text-muted)" }}>TO IMPACT</span>
+              IDEAS{" "}
+              <span style={{ color: "var(--color-text-muted)" }}>
+                TO IMPACT
+              </span>
             </h2>
             <p
               className="max-w-md text-lg"
               style={{ color: "var(--color-text-secondary)" }}
             >
-              that turn ideas into scalable businesses
+              Where ideas turn into scalable businesses
             </p>
           </div>
 
-          {/* Tabs */}
           <div
             className="flex p-1 rounded-full border backdrop-blur-md"
             style={{
@@ -143,7 +186,6 @@ const Panel = () => {
           </div>
         </div>
 
-        {/* Panels */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {schedule[activeTab].map((item, idx) => (
             <div

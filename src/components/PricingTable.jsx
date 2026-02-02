@@ -25,7 +25,7 @@ const plans = [
         name: "Foundation",
         price: "₹25k + GST",
         desc: "Priority access.",
-        features: ["100 sq.ft Stall", "Gold Pass (3)", "Networking Lunch", "Priority Entry"],
+        features: ["100 sq.ft Stall", "Gold Pass", "Networking Lunch", "Priority Entry"],
         missing: ["Stage Slot", "VIP Branding"],
         cta: "Get Foundation",
         highlight: true

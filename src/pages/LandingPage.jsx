@@ -3,6 +3,8 @@ import Organizers from "../components/Organizers";
 import Panel from "../components/PanelDiscussion";
 import SpeakersMarquee from "../components/SpeakersMarquee";
 import SponsorsGrid from "../components/SponsorsGrid";
+import VenueFlow from "../components/Venue";
+
 
 const LandingPage = () => (
   <>
@@ -16,6 +18,7 @@ const LandingPage = () => (
                <SponsorsGrid />
       <Agenda />
        <Panel />
+       <VenueFlow />
    
       <Pricing />
 
