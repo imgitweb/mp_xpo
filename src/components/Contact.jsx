@@ -3,12 +3,15 @@ import { motion } from "framer-motion";
 import { Phone, Mail, Instagram, Send } from "lucide-react";
 import toast, { Toaster } from "react-hot-toast";
 
+
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
+  const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -45,6 +48,10 @@ const Contact = () => {
       return;
     }
 
+    if (!emailRegex.test(formData.email)) {
+      toast.error("Please enter a valid email address");
+      return;
+    }
     setIsSubmitting(true);
 
     try {
