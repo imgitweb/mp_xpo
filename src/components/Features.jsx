@@ -141,7 +141,7 @@ const Features = () => {
             >
               WHY{" "}
               <span style={{ color: "var(--color-text-muted)" }}>
-                JOIN JS ?
+                JOIN US ?
               </span>
             </h2>
             <p
@@ -198,9 +198,9 @@ const Features = () => {
                 </p>
               </div>
 
-              <div className="mt-8 flex items-center gap-2 text-sm font-medium underline underline-offset-4 cursor-pointer">
+              {/* <div className="mt-8 flex items-center gap-2 text-sm font-medium underline underline-offset-4 cursor-pointer">
                 Apply for Pitch <FiArrowRight />
-              </div>
+              </div> */}
             </div>
 
             <div className="absolute right-0 bottom-0 w-64 h-64 bg-gradient-to-tr from-blue-500/20 to-purple-500/0 rounded-tl-full opacity-50 group-hover:scale-110 transition-transform duration-500" />

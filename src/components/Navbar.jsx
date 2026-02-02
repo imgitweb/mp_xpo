@@ -78,9 +78,9 @@ const Navbar = () => {
                     {/* Logo */}
                     <div className="flex items-center gap-4">
                         <Link to="/" className="flex flex-col sm:flex-row sm:items-center gap- group">
-                            <div className='overflow-hidden h-12 flex items-center justify-center w-30 '>
+                            <div className='overflow-hidden h-12 p-2 flex items-center justify-center w-30 '>
                              {/* BVS<span style={{ color: 'var(--color-primary)' }}>2026</span> */}
-                                <img className='-mb-4 ' src="/logo/bvs_logo.png" alt="" />
+                                <img className='mb-1 ' src="/logo/bvs_logo1.png" alt="" />
                             </div>
                             {/* <span
                                 className="text-[10px] sm:text-xs font-mono px-2 py-0.5 rounded sm:ml-2 w-fit"

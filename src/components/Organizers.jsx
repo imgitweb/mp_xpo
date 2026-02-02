@@ -2,8 +2,18 @@ import React, { useState } from 'react';
 import { FiArrowUpRight, FiLinkedin, FiTwitter } from 'react-icons/fi';
 
 const organizers = [
+
     {
         id: 1,
+        name: "CK Tiwari",
+        role: "Co-Founder & CTO",
+        topic:
+            "Building Scalable Technology Platforms Using AI/ML for Startups and Economic Development",
+        image: "/organizers/cksir.png",
+        linkedin: "https://www.linkedin.com/in/imcktiwari/"
+    },
+    {
+        id: 2,
         name: "Mr. Apurv Gupta",
         role: "Director Dainik Jagran Jhansi",
         topic: "focused on early-stage investments in tech, including Fintech, IoT, and SMAC",
@@ -11,7 +21,25 @@ const organizers = [
         linkedin: "https://www.linkedin.com/posts/risejhansi_fridaywithfounder-risejhansi-apurvgupta-activity-7212034832678199297-acWY/"
     },
     {
-        id: 2,
+        id: 3,
+        name: "Sharvi Richhariya",
+        role: "Tech Policy Fellow | Engineer",
+        topic:
+            "Technology policy, sustainability, and social impact with a strong foundation in engineering, research, and policy advocacy",
+        image: "/organizers/sarvi-sponsor.png",
+        linkedin: "https://www.linkedin.com/in/sharvi-richhariya/"
+    },
+    {
+        id: 4,
+        name: "Arman",
+        role: "Tech Policy Fellow | Engineer",
+        topic:
+            "Technology policy, sustainability strong foundation in engineering, research, and policy advocacy",
+        image: "/organizers/arman-sponsor.png",
+        linkedin: "https://www.linkedin.com/in/sharvi-richhariya/"
+    },
+    {
+        id: 5,
         name: "Rahul Richhariya",
         role: "Director Dynesty Infradevelopers",
         topic: "Global Healthcare Sector",
@@ -19,7 +47,7 @@ const organizers = [
         linkedin: "https://www.linkedin.com/in/rahul-richhariya-30791b14/?originalSubdomain=in"
     },
     {
-        id: 3,
+        id: 6,
         name: "Dr Akanksha Richhariya",
         role: "President – Rotary Club of Jhansi Rani",
         topic: "entrepreneur, angel investor, and venture capitalist with 13+ years of experience mentoring and backing early-stage startups",
@@ -27,7 +55,7 @@ const organizers = [
         linkedin: "https://www.linkedin.com/in/dr-akanksha-richhariya-47a48a173/?originalSubdomain=in"
     },
     {
-        id: 4,
+        id: 7,
         name: "Mr. Amit Singh",
         role: "MD at PITAMBRA INDUSTRIES Jhansi™",
         topic: "Ministry of Women & Child Development",
@@ -35,11 +63,19 @@ const organizers = [
         linkedin: "https://www.linkedin.com/in/amit-singh-3988b5180/?originalSubdomain=in"
     },
     {
-        id: 5,
+        id: 8,
         name: "Mr. Raju Parvar",
         role: "CEO Hiscon Industries",
         topic: "investment into a ₹150+ crore empire, popularizing tea served in traditional kulhads",
-        image: "/organizers/raju.jpg",
+        image: "/organizers/raju-sponsor.jpeg",
+        linkedin: "https://www.linkedin.com/in/raju-parwar-a06594326/"
+    },
+    {
+        id: 9,
+        name: "Mr. Raju Parvar",
+        role: "CEO Hiscon Industries",
+        topic: "investment into a ₹150+ crore empire, popularizing tea served in traditional kulhads",
+        image: "/organizers/unknown.jpeg",
         linkedin: "https://www.linkedin.com/in/raju-parwar-a06594326/"
     }
 ];
@@ -104,7 +140,7 @@ const Organizers = () => {
 
                                 <div className="flex flex-col md:flex-row justify-between items-start gap-4">
                                     <div>
-                                        <div className="inline-block px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] md:text-xs font-bold text-white mb-2 md:mb-4 border border-white/20">
+                                        <div className="inline-block px-8 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] md:text-xs font-bold text-white mb-2 md:mb-4 border border-white/20">
                                             {organizer.topic}
                                         </div>
                                         <h3 className="text-3xl md:text-6xl font-black text-white leading-none mb-1 md:mb-2">

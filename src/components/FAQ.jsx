@@ -112,7 +112,7 @@ const FAQ = () => {
                                     </div>
 
                                     <div
-                                        className={`ml-4 w-8 h-8 flex items-center justify-center rounded-full border transition-all duration-300 ${openIndex === idx ? 'rotate-45 bg-white text-black' : 'rotate-0 text-white'}`}
+                                        className={`ml-4 w-8 h-8 shrink-0 flex items-center justify-center rounded-full border transition-all duration-300 ${openIndex === idx ? 'rotate-45 bg-white text-black' : 'rotate-0 text-white'}`}
                                         style={{ borderColor: 'var(--color-border)' }}
                                     >
                                         <FiPlus className="w-5 h-5" />

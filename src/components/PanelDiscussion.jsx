@@ -135,7 +135,7 @@ const Panel = () => {
                   }`}
                   style={{ backgroundColor: "var(--color-text)" }}
                 />
-                <span className="relative z-10">
+                <span className="cursor-pointer relative z-10">
                   {day === "day1" ? "28 FEB" : "01 MAR"}
                 </span>
               </button>

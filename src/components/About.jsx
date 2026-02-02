@@ -29,7 +29,7 @@ const About = () => {
             </div>
 
             <h1
-              className="text-6xl md:text-8xl font-black tracking-tighter leading-[0.9] mb-8"
+              className="text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter leading-[0.9] mb-8"
               style={{ color: "var(--color-text)" }}
             >
               BUNDELKHAND <br />

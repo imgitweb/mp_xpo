@@ -152,7 +152,7 @@ const VisitorPass = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-4 rounded-2xl font-bold text-lg"
+            className="cursor-pointer w-full py-4 rounded-2xl font-bold text-lg"
             style={{ backgroundColor: 'var(--color-text)', color: 'var(--color-bg)' }}
           >
             {loading ? 'Submitting...' : 'Get Visitor Pass – ₹299'}
