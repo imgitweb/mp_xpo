@@ -5,15 +5,6 @@ const organizers = [
 
     {
         id: 1,
-        name: "CK Tiwari",
-        role: "Co-Founder & CTO",
-        topic:
-            "Building Scalable Technology Platforms Using AI/ML for Startups and Economic Development",
-        image: "/organizers/cksir.png",
-        linkedin: "https://www.linkedin.com/in/imcktiwari/"
-    },
-    {
-        id: 2,
         name: "Mr. Apurv Gupta",
         role: "Director Dainik Jagran Jhansi",
         topic: "focused on early-stage investments in tech, including Fintech, IoT, and SMAC",
@@ -21,25 +12,7 @@ const organizers = [
         linkedin: "https://www.linkedin.com/posts/risejhansi_fridaywithfounder-risejhansi-apurvgupta-activity-7212034832678199297-acWY/"
     },
     {
-        id: 3,
-        name: "Sharvi Richhariya",
-        role: "Tech Policy Fellow | Engineer",
-        topic:
-            "Technology policy, sustainability, and social impact with a strong foundation in engineering, research, and policy advocacy",
-        image: "/organizers/sarvi-sponsor.png",
-        linkedin: "https://www.linkedin.com/in/sharvi-richhariya/"
-    },
-    {
-        id: 4,
-        name: "Arman",
-        role: "Tech Policy Fellow | Engineer",
-        topic:
-            "Technology policy, sustainability strong foundation in engineering, research, and policy advocacy",
-        image: "/organizers/arman-sponsor.png",
-        linkedin: "https://www.linkedin.com/in/sharvi-richhariya/"
-    },
-    {
-        id: 5,
+        id: 2,
         name: "Rahul Richhariya",
         role: "Director Dynesty Infradevelopers",
         topic: "Global Healthcare Sector",
@@ -47,7 +20,7 @@ const organizers = [
         linkedin: "https://www.linkedin.com/in/rahul-richhariya-30791b14/?originalSubdomain=in"
     },
     {
-        id: 6,
+        id: 3,
         name: "Dr Akanksha Richhariya",
         role: "President – Rotary Club of Jhansi Rani",
         topic: "entrepreneur, angel investor, and venture capitalist with 13+ years of experience mentoring and backing early-stage startups",
@@ -55,29 +28,56 @@ const organizers = [
         linkedin: "https://www.linkedin.com/in/dr-akanksha-richhariya-47a48a173/?originalSubdomain=in"
     },
     {
-        id: 7,
+        id: 4,
         name: "Mr. Amit Singh",
         role: "MD at PITAMBRA INDUSTRIES Jhansi™",
         topic: "Ministry of Women & Child Development",
         image: "/organizers/Amit.png",
         linkedin: "https://www.linkedin.com/in/amit-singh-3988b5180/?originalSubdomain=in"
     },
-    {
-        id: 8,
-        name: "Mr. Raju Parvar",
-        role: "CEO Hiscon Industries",
-        topic: "investment into a ₹150+ crore empire, popularizing tea served in traditional kulhads",
-        image: "/organizers/raju-sponsor.jpeg",
-        linkedin: "https://www.linkedin.com/in/raju-parwar-a06594326/"
-    },
-    {
-        id: 9,
+    // {
+        //     id: 8,
+        //     name: "Mr. Raju Parvar",
+        //     role: "CEO Hiscon Industries",
+        //     topic: "investment into a ₹150+ crore empire, popularizing tea served in traditional kulhads",
+        //     image: "/organizers/raju-sponsor.jpeg",
+        //     linkedin: "https://www.linkedin.com/in/raju-parwar-a06594326/"
+        // },
+        {
+        id: 5,
         name: "Mr. Raju Parvar",
         role: "CEO Hiscon Industries",
         topic: "investment into a ₹150+ crore empire, popularizing tea served in traditional kulhads",
         image: "/organizers/unknown.jpeg",
         linkedin: "https://www.linkedin.com/in/raju-parwar-a06594326/"
-    }
+    },
+    {
+        id: 6,
+        name: "CK Tiwari",
+        role: "Co-Founder & CTO",
+        topic:
+        "Building Scalable Technology Platforms Using AI/ML for Startups and Economic Development",
+        image: "/organizers/cksir.png",
+        linkedin: "https://www.linkedin.com/in/imcktiwari/"
+    },
+    {
+        id: 7,
+        name: "Sharvi Richhariya",
+        role: "Tech Policy Fellow | Engineer",
+        topic:
+        "Technology policy, sustainability, and social impact with a strong foundation in engineering, research, and policy advocacy",
+        image: "/organizers/sarvi-sponsor.png",
+        linkedin: "https://www.linkedin.com/in/sharvi-richhariya/"
+    },
+    {
+        id: 8,
+        name: "Aryaman Mehrotra",
+        role: "Founder & Entrepreneur – HostelsNearMe",
+        topic:
+        "Revolutionizing student accommodation through technology-driven platforms, scalable marketplaces, and operational excellence",
+        image: "/organizers/arman-sponsor.png",
+        linkedin: "https://www.linkedin.com/in/aryaman-mehrotra-119033166/?originalSubdomain=in"
+    },
 ];
 
 const Organizers = () => {

@@ -2,14 +2,14 @@ import React from 'react';
 
 // 1. Standard approach: Import images to ensure build-time validation
 // Replace these paths with the actual relative paths to your assets
-import logo1 from '../../public/sponsors/Bundelkhand_commerce_chamber.png';
-import logo2 from '../../public/sponsors/Rotaract_Club_of_Manu_Jhansi.png';
-import logo3 from '../../public/sponsors/jhansi-smart-city.png';
-import logo4 from '../../public/sponsors/im-global2.png';
-import logo5 from '../../public/sponsors/rise-jhansi.png';
-import logo6 from '../../public/sponsors/Rotary_club.png';
-import logo7 from '../../public/sponsors/Danik_jagran.png';
-import logo8 from '../../public/sponsors/Pragati.png';
+import logo1 from '/sponsors/Bundelkhand_commerce_chamber.png';
+import logo2 from '/sponsors/Rotaract_Club_of_Manu_Jhansi.png';
+import logo3 from '/sponsors/jhansi-smart-city.png';
+import logo4 from '/sponsors/im-global2.png';
+import logo5 from '/sponsors/rise-jhansi.png';
+import logo6 from '/sponsors/Rotary_club.png';
+import logo7 from '/sponsors/Danik_jagran.png';
+import logo8 from '/sponsors/Pragati.png';
 
 const sponsors = [
     { name: "Bundelkhand commerce chamber", type: "Industry Association Partner", logo: logo1 },
