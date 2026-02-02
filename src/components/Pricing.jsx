@@ -9,7 +9,7 @@ const GOOGLE_FORM_URL = "https://forms.gle/kGkTVRkG6T5QTdWF9";
 const plans = [
     {
         name: "VISITOR PASS",
-        price: "₹299",
+        price: "Free",
         desc: "For students, professionals & general visitors.",
         features: [
             "Expo Zone Access",
@@ -43,7 +43,7 @@ const plans = [
         desc: "Mid-tier visibility with priority access.",
         features: [
             "100 sq.ft Priority Zone Stall",
-            "Gold Seating (3)",
+            "Gold Seating",
             "Networking Lunch",
             "Priority Entry"
         ],
