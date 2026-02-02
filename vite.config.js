@@ -13,7 +13,7 @@ export default defineConfig(({ mode }) => {
           target:
             env.VITE_MODE === "LOCAL"
               ? "http://localhost:3000"
-              : "https://mp-xpo.onrender.com",
+              : "https://bundelkhandexpo.com",
           changeOrigin: true,
           secure: false,
         },
