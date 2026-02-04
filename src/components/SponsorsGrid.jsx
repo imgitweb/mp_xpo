@@ -15,7 +15,7 @@ const sponsors = [
     { name: "Bundelkhand commerce chamber", type: "Industry Association Partner", logo: logo1 },
     { name: "Rotaract Club", type: "Community Partner", logo: logo2 },
     { name: "jhansi Smart City", type: "Community Partner", logo: logo3 },
-    { name: "im-global", type: "Community Partner", logo: logo4 },
+    // { name: "im-global", type: "Community Partner", logo: logo4 },
     { name: "rise jhansi", type: "Community Partner", logo: logo5 },
     { name: "Rotary Club", type: "Community Service Partner", logo: logo6 },
     { name: "Danik-Jagran", type: "Media Partner", logo: logo7 },

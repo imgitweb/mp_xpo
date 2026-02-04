@@ -51,17 +51,17 @@ const organizers = [
         image: "/organizers/unknown.jpeg",
         linkedin: "https://www.linkedin.com/in/raju-parwar-a06594326/"
     },
+    // {
+    //     id: 6,
+    //     name: "CK Tiwari",
+    //     role: "Co-Founder & CTO",
+    //     topic:
+    //     "Building Scalable Technology Platforms Using AI/ML for Startups and Economic Development",
+    //     image: "/organizers/cksir.png",
+    //     linkedin: "https://www.linkedin.com/in/imcktiwari/"
+    // },
     {
         id: 6,
-        name: "CK Tiwari",
-        role: "Co-Founder & CTO",
-        topic:
-        "Building Scalable Technology Platforms Using AI/ML for Startups and Economic Development",
-        image: "/organizers/cksir.png",
-        linkedin: "https://www.linkedin.com/in/imcktiwari/"
-    },
-    {
-        id: 7,
         name: "Sharvi Richhariya",
         role: "Tech Policy Fellow | Engineer",
         topic:
@@ -70,7 +70,7 @@ const organizers = [
         linkedin: "https://www.linkedin.com/in/sharvi-richhariya/"
     },
     {
-        id: 8,
+        id: 7,
         name: "Aryaman Mehrotra",
         role: "Founder & Entrepreneur – HostelsNearMe",
         topic:
