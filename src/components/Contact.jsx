@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Phone, Mail, Instagram, Send } from "lucide-react";
+import { Phone, Mail, Instagram, Send, Loader2 } from "lucide-react";
 import toast, { Toaster } from "react-hot-toast";
+import axiosInstance from "../utils/axiosInstance";
 
 
 
@@ -43,8 +44,17 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!formData.name || !formData.email || !formData.message) {
+    const nameEl = formData.name.trim();
+    const emailEl = formData.email.trim();
+    const messageEl = formData.message.trim();
+
+    if (!nameEl || !emailEl || !messageEl) {
       toast.error("Please fill all fields");
+      return;
+    }
+
+    if (messageEl.length < 10) {
+      toast.error("Message must be at least 10 characters long");
       return;
     }
 
@@ -55,21 +65,9 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("/api/contacts", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await axiosInstance.post("/contacts", formData);
 
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.message || "Failed to send message");
-      }
-
-      toast.success(data.message || "Message sent successfully 🚀");
+      toast.success(response.data.message || "Message sent successfully 🚀");
 
       setFormData({
         name: "",
@@ -78,7 +76,11 @@ const Contact = () => {
       });
     } catch (error) {
       console.error("Contact submit error:", error);
-      toast.error(error.message || "Server error, try again later");
+      toast.error(
+        error.response?.data?.message ||
+        error.message ||
+        "Server error, try again later"
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -220,7 +222,7 @@ const Contact = () => {
               <textarea
                 name="message"
                 rows="4"
-                placeholder="Your Message"
+                placeholder="Your Message (min 10 chars)"
                 value={formData.message}
                 onChange={handleChange}
                 disabled={isSubmitting}
@@ -241,8 +243,17 @@ const Contact = () => {
                   opacity: isSubmitting ? 0.7 : 1,
                 }}
               >
-                {isSubmitting ? "Sending..." : "Send Message"}
-                <Send className="w-4 h-4" />
+                {isSubmitting ? (
+                  <>
+                    Sending...
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                  </>
+                ) : (
+                  <>
+                    Send Message
+                    <Send className="w-4 h-4" />
+                  </>
+                )}
               </button>
             </form>
           </motion.div>
