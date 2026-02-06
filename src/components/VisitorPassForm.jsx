@@ -3,6 +3,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import toast, { Toaster } from "react-hot-toast";
 import { Listbox } from "@headlessui/react";
 import { ChevronUpDownIcon } from "@heroicons/react/20/solid";
+import { Loader2, XIcon } from "lucide-react";
+import axiosInstance from "../utils/axiosInstance";
+import { useNavigate } from "react-router-dom";
 
 const professions = [
   "Student",
@@ -22,6 +25,7 @@ const VisitorPass = () => {
     profession: "",
     purpose: "",
   });
+  const navigate = useNavigate();
 
   const [loading, setLoading] = useState(false);
 
@@ -39,31 +43,26 @@ const VisitorPass = () => {
     e.preventDefault();
 
     // ✅ Frontend validation
-    if (!form.name.trim()) return toast.error("Name is required");
-    if (!/^\S+@\S+\.\S+$/.test(form.email))
+    const nameStr = form.name.trim();
+    const cityStr = form.city.trim();
+
+    if (!nameStr) return toast.error("Name is required");
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email))
       return toast.error("Enter valid email address");
     if (form.phone.length !== 10)
       return toast.error("Mobile number must be 10 digits");
-    if (!form.city.trim()) return toast.error("City is required");
+    if (!cityStr) return toast.error("City is required");
     if (!form.profession) return toast.error("Please select your profession");
     if (!form.purpose) return toast.error("Please select your purpose");
 
     try {
       setLoading(true);
-
-      const res = await fetch("/api/visitors/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(form),
+      const res = await axiosInstance.post("/visitors/register", {
+        ...form,
+        name: nameStr,
+        city: cityStr,
       });
-
-      const data = await res.json();
-
-      if (!res.ok) {
-        return toast.error(data.message || "Something went wrong");
-      }
+      console.log(res);
 
       toast.success("🎉 Visitor Pass Registered Successfully!");
 
@@ -76,7 +75,10 @@ const VisitorPass = () => {
         purpose: "",
       });
     } catch (err) {
-      toast.error("Server error, please try again");
+      console.error(err);
+      toast.error(
+        err.response?.data?.message || "Server error, please try again"
+      );
     } finally {
       setLoading(false);
     }
@@ -116,8 +118,7 @@ const VisitorPass = () => {
                 key={item}
                 value={item}
                 className={({ active }) =>
-                  `cursor-pointer px-5 py-3 ${
-                    active ? "bg-zinc-800 text-white" : "text-gray-300"
+                  `cursor-pointer px-5 py-3 ${active ? "bg-zinc-800 text-white" : "text-gray-300"
                   }`
                 }
               >
@@ -143,10 +144,22 @@ const VisitorPass = () => {
           borderColor: "var(--color-border)",
         }}
       >
-        <div className="text-center mb-8">
-          <h2 className="text-3xl sm:text-5xl font-black mb-3">Visitor Pass</h2>
+        <div className="text-end flex justify-center items-end mb-8">
+     <div>
+           <h2 className="text-3xl sm:text-5xl font-black mb-3">Visitor Pass</h2>
           <p className="opacity-60">Fill details for your digital entry pass</p>
+     </div>
+            {/* <button
+            onClick={() => navigate(-1)}
+            
+            className="">
+          <XIcon className="h-9 w-9" />
+        </button> */}
         </div>
+        {/* Crsoss button  */}
+      
+
+        
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <input
@@ -202,17 +215,42 @@ const VisitorPass = () => {
             onChange={handleSelectChange}
           />
 
-          <button
-            type="submit"
-            disabled={loading}
-            className="cursor-pointer w-full py-4 rounded-2xl font-bold text-lg"
-            style={{
-              backgroundColor: "var(--color-text)",
-              color: "var(--color-bg)",
-            }}
-          >
-            {loading ? "Submitting..." : "Get Visitor Pass"}
-          </button>
+<div className="flex items-center w-full justify-between gap-4">
+  {/* Submit Button */}
+  <button
+    type="submit"
+    disabled={loading}
+    className="cursor-pointer w-full px-6 py-4 rounded-2xl font-bold text-lg flex items-center justify-center gap-2 transition-opacity"
+    style={{
+      backgroundColor: "var(--color-text)",
+      color: "var(--color-bg)",
+      opacity: loading ? 0.7 : 1,
+    }}
+  >
+    {loading ? (
+      <>
+        Submitting...
+        <Loader2 className="w-5 h-5 animate-spin" />
+      </>
+    ) : (
+      "Get Visitor Pass"
+    )}
+  </button>
+
+  {/* Back Button */}
+  <button
+    type="button"
+    onClick={() => navigate(-1)}
+    className="cursor-pointer px-6 py-4 rounded-2xl font-bold text-lg flex items-center justify-center gap-2 border transition hover:opacity-80"
+    style={{
+      borderColor: "var(--color-text)",
+      color: "var(--color-text)",
+    }}
+  >
+    Back
+  </button>
+</div>
+
         </form>
       </motion.div>
     </section>

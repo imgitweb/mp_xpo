@@ -54,7 +54,7 @@ const Navbar = () => {
         // { label: 'Speakers', href: '/#speakers' },
         { label: 'Sponsors', href: '/#sponsor' },
         { label: 'Organizers', href: '/#organizers' },
-        { label: 'Support', href: '/#faq' },
+        { label: 'Support', href: '/contact' },
         // { label: 'Workshops', href: '/workshops' },
         // { label: 'Our Story', href: '/about' },
         // { label: 'Team', href: '/team' },
