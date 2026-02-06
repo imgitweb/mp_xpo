@@ -1,13 +1,13 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   plugins: [react()],
   server: {
     proxy: {
       "/api": {
         target:
-          import.meta.env.MODE === "development"
+          mode === "development"
             ? "http://localhost:3000"
             : "https://bundelkhandexpo.com",
         changeOrigin: true,
@@ -15,4 +15,4 @@ export default defineConfig({
       },
     },
   },
-});
+}));
