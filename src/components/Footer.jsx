@@ -76,9 +76,10 @@ const Footer = () => {
               style={{ color: "var(--color-text-secondary)" }}
             >
               <li className="flex items-center gap-3">
-                <FaMapMarkerAlt />
-                Jai Academy Shivpuri – Nagra Road, Jhansi, Uttar Pradesh, India
-              </li>
+              <FaMapMarkerAlt />
+              Urban Haat, Behind Deen Dayal Sabhagar, Jhansi, Uttar Pradesh, India
+            </li>
+
               <li className="flex items-center gap-3">
                 <FaPhoneAlt />
                 <a href="tel:9305536659" className="hover:text-white">

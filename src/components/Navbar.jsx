@@ -143,7 +143,7 @@ const Navbar = () => {
                                 border: '1px solid var(--color-text)'
                             }}
                         >
-                            Pre-register
+                            Get Your FREE Entry Pass
                         </button>
 
                         {/* Mobile Menu Button */}
@@ -205,7 +205,7 @@ const Navbar = () => {
                                         color: 'var(--color-bg)'
                                     }}
                                 >
-                                    Pre-register
+                                    Get Your FREE Entry Pass
                                 </button>
                             </div>
                         </div>

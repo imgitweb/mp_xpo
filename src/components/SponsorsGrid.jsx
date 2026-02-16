@@ -10,6 +10,7 @@ import logo5 from '/sponsors/rise-jhansi.png';
 import logo6 from '/sponsors/Rotary_club.png';
 import logo7 from '/sponsors/Danik_jagran.png';
 import logo8 from '/sponsors/Pragati.png';
+import logo9 from '/sponsors/imglobal.png';
 
 const sponsors = [
     { name: "Bundelkhand commerce chamber", type: "Industry Association Partner", logo: logo1 },
@@ -20,6 +21,7 @@ const sponsors = [
     { name: "Rotary Club", type: "Community Service Partner", logo: logo6 },
     { name: "Danik-Jagran", type: "Media Partner", logo: logo7 },
     { name: "Pragati", type: "Social Impact Partner", logo: logo8 },
+    { name: "im Global", type: "Global Partner", logo: logo9 }
 ];
 
 const SponsorsGrid = () => {

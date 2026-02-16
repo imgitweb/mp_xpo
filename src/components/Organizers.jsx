@@ -2,79 +2,100 @@ import React, { useState } from 'react';
 import { FiArrowUpRight, FiLinkedin, FiTwitter } from 'react-icons/fi';
 
 const organizers = [
-
     {
         id: 1,
-        name: "Mr. Apurv Gupta",
-        role: "Director Dainik Jagran Jhansi",
-        topic: "focused on early-stage investments in tech, including Fintech, IoT, and SMAC",
-        image: "/organizers/Apurv1.png",
-        linkedin: "https://www.linkedin.com/posts/risejhansi_fridaywithfounder-risejhansi-apurvgupta-activity-7212034832678199297-acWY/"
-    },
-    {
-        id: 2,
         name: "Rahul Richhariya",
-        role: "Director Dynesty Infradevelopers",
-        topic: "Global Healthcare Sector",
+        role: "President – Pragati Social Development Society (Since 2003)",
+        topic: "His leadership and social contributions have been acknowledged at national and international platforms, including recent appreciation at the UK Parliament (Westminster), London.",
         image: "/organizers/Rahul1.png",
         linkedin: "https://www.linkedin.com/in/rahul-richhariya-30791b14/?originalSubdomain=in"
     },
     {
+        id: 2,
+        name: "Apurv Gupta",
+        role: "Director – Dainik Jagran",
+        topic: "Leadership Role in Money Yatra (Stockbroking & Fund Management) and diversified Real Estate Investments",
+        image: "/organizers/Apurv1.png",
+        linkedin: "https://www.linkedin.com/posts/risejhansi_fridaywithfounder-risejhansi-apurvgupta-activity-7212034832678199297-acWY/"
+    },
+    {
         id: 3,
-        name: "Dr Akanksha Richhariya",
+        name: "Dr. Akanksha Richhariya",
         role: "President – Rotary Club of Jhansi Rani",
-        topic: "entrepreneur, angel investor, and venture capitalist with 13+ years of experience mentoring and backing early-stage startups",
+        topic: "Director – Pragati Social Development Society (NGO)",
         image: "/organizers/Akanksha1.jpeg",
         linkedin: "https://www.linkedin.com/in/dr-akanksha-richhariya-47a48a173/?originalSubdomain=in"
     },
     {
         id: 4,
-        name: "Mr. Amit Singh",
-        role: "MD at PITAMBRA INDUSTRIES Jhansi™",
-        topic: "Ministry of Women & Child Development",
+        name: "Dhiraj Khullar",
+        role: "Managing Director – Hankhul Packwell Pvt. Ltd",
+        topic: "Over four decades of experience in building scalable manufacturing ventures",
+        image: "/organizers/DhirajKhullar.jpeg", // Make sure filename matches your folder
+        linkedin: "https://www.linkedin.com/company/bundelkhandexpo/"
+    },
+    
+    {
+        id: 5,
+        name: "Amit Singh",
+        role: "Managing Director, PITAMBRA INDUSTRIES",
+        topic: "Deals with mining aggregate, Msand along with that we are in agriculture producing exotic flowers and best in class wheat and gram seed.",
         image: "/organizers/Amit.png",
         linkedin: "https://www.linkedin.com/in/amit-singh-3988b5180/?originalSubdomain=in"
     },
-    // {
-        //     id: 8,
-        //     name: "Mr. Raju Parvar",
-        //     role: "CEO Hiscon Industries",
-        //     topic: "investment into a ₹150+ crore empire, popularizing tea served in traditional kulhads",
-        //     image: "/organizers/raju-sponsor.jpeg",
-        //     linkedin: "https://www.linkedin.com/in/raju-parwar-a06594326/"
-        // },
-        {
-        id: 5,
-        name: "Mr. Raju Parvar",
-        role: "CEO Hiscon Industries",
-        topic: "investment into a ₹150+ crore empire, popularizing tea served in traditional kulhads",
-        image: "/organizers/unknown.jpeg",
-        linkedin: "https://www.linkedin.com/in/raju-parwar-a06594326/"
-    },
-    // {
-    //     id: 6,
-    //     name: "CK Tiwari",
-    //     role: "Co-Founder & CTO",
-    //     topic:
-    //     "Building Scalable Technology Platforms Using AI/ML for Startups and Economic Development",
-    //     image: "/organizers/cksir.png",
-    //     linkedin: "https://www.linkedin.com/in/imcktiwari/"
-    // },
     {
         id: 6,
+        name: "Rakesh Singh ",
+        role: "Swastik Education Society – Director, GD Goenka School",
+        topic: "Infrastructure, Education & Healthcare Innovation Lead.",
+        image: "/organizers/rakesh.jpeg", // Update with actual image if available
+        linkedin: "https://www.linkedin.com/company/bundelkhandexpo/"
+    },
+    {
+        id: 7,
+        name: "Er. Raju Parwar",
+        role: "Industrial Development & MSME Leadership",
+        topic: "Pioneer of Granite Processing, Paver Blocks, Fly Ash Bricks, M-Sand, AAC Blocks in Bundelkhand. ",
+        image: "/organizers/raju.jpeg", // Update with actual image if available
+        linkedin: "https://www.linkedin.com/company/bundelkhandexpo/"
+    },
+    {
+        id: 8,
+        name: "Vivek Jain",
+        role: "Director – Money Yatra Associates",
+        topic: "Strategic Investment & Wealth Creation Expert.",
+        image: "/organizers/vivekJain.jpeg",
+        linkedin: "https://www.linkedin.com/company/bundelkhandexpo/"
+    },
+    {
+        id: 9,
+        name: "CK Tiwari",
+        role: "CTO IM Global, Project Director RISE Jhansi Smart City Incubation Centre",
+        topic: "A curious mind in love with technology, always seeking better ways to shape the future.",
+        image: "/organizers/CKTiwari.jpeg",
+        linkedin: "https://www.linkedin.com/in/imcktiwari/"
+    },
+    {
+        id: 10,
+        name: "Manish Newalkar",
+        role: "Trade, Industry & Institutional Governance Lead",
+        topic: "Trade Representation, Education Management, Institutional Governance, Community Leadership",
+        image: "/organizers/ManishNewalkar.jpeg", // Update with actual image if available
+        linkedin: "https://www.linkedin.com/company/bundelkhandexpo/"
+    },
+    {
+        id: 11,
         name: "Sharvi Richhariya",
-        role: "Tech Policy Fellow | Engineer",
-        topic:
-        "Technology policy, sustainability, and social impact with a strong foundation in engineering, research, and policy advocacy",
+        role: "President – Rotaract Club of Manu Jhansi",
+        topic: "Involved in designing policy-backed programs linking government priorities with startups and institutions",
         image: "/organizers/sarvi-sponsor.png",
         linkedin: "https://www.linkedin.com/in/sharvi-richhariya/"
     },
     {
-        id: 7,
+        id: 12,
         name: "Aryaman Mehrotra",
-        role: "Founder & Entrepreneur – HostelsNearMe",
-        topic:
-        "Revolutionizing student accommodation through technology-driven platforms, scalable marketplaces, and operational excellence",
+        role: "Rotaract Foundation Chair (Charter Member 2025–26)",
+        topic: "Founder of Hostelsnearme Enterprises Pvt. Ltd.",
         image: "/organizers/arman-sponsor.png",
         linkedin: "https://www.linkedin.com/in/aryaman-mehrotra-119033166/?originalSubdomain=in"
     },
