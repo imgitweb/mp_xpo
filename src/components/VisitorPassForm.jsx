@@ -60,7 +60,7 @@ const VisitorPass = () => {
 
   const fetchPassPreview = async (visitorId) => {
     try {
-      const response = await axios.get(`/api/visitors/download/${visitorId}`, {
+      const response = await axiosInstance.get(`/visitors/download/${visitorId}`, {
         responseType: 'blob', 
       });
       const url = window.URL.createObjectURL(new Blob([response.data], { type: 'application/pdf' }));
