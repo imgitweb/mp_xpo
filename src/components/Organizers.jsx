@@ -55,7 +55,7 @@ const organizers = [
         id: 7,
         name: "Er. Raju Parwar",
         role: "Industrial Development & MSME Leadership",
-        topic: "Pioneer of Granite Processing, Paver Blocks, Fly Ash Bricks, M-Sand, AAC Blocks in Bundelkhand. ",
+        topic: "Driving Bundelkhand’s next phase of construction with performance-focused products—Paver Blocks, Fly Ash Bricks, M-Sand, and AAC Blocks—manufactured with rigorous quality standards.",
         image: "/organizers/raju.jpeg", // Update with actual image if available
         linkedin: "https://www.linkedin.com/company/bundelkhandexpo/"
     },

@@ -71,26 +71,28 @@ const VisitorPass = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!form.name.trim() || !form.email || form.phone.length !== 10 || !form.city || !form.profession || !form.purpose) {
-      return toast.error("Please fill all fields correctly");
-    }
+  e.preventDefault();
+  
+  // ✅ Email aur Purpose ko yahan se hata diya gaya hai
+  if (!form.name.trim() || form.phone.length !== 10 || !form.city || !form.profession) {
+    return toast.error("Please fill all required fields (Name, Phone, City, Profession)");
+  }
 
-    try {
-      setLoading(true);
-      const res = await axiosInstance.post("/visitors/register", form);
-      const vId = res.data?.visitorId;
-      if (vId) {
-        toast.success("Registration Successful!");
-        setSubmittedData({ ...form, id: vId });
-        await fetchPassPreview(vId);
-      }
-    } catch (err) {
-      toast.error(err.response?.data?.message || "Registration failed");
-    } finally {
-      setLoading(false);
+  try {
+    setLoading(true);
+    const res = await axiosInstance.post("/visitors/register", form);
+    const vId = res.data?.visitorId;
+    if (vId) {
+      toast.success("Registration Successful!");
+      setSubmittedData({ ...form, id: vId });
+      await fetchPassPreview(vId);
     }
-  };
+  } catch (err) {
+    toast.error(err.response?.data?.message || "Registration failed");
+  } finally {
+    setLoading(false);
+  }
+};
 
   const handleDownload = () => {
     if (!pdfBlobUrl) return toast.error("Pass not ready");
@@ -112,11 +114,20 @@ const VisitorPass = () => {
 
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="relative z-10 w-full max-w-4xl flex flex-col items-center gap-6">
           <div className="text-center space-y-3">
-             <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="inline-flex items-center gap-2 px-3 py-1 bg-green-500/10 border border-green-500/20 rounded-full text-green-400 text-xs font-bold">
-                <Sparkles size={14} /> REGISTRATION CONFIRMED
-             </motion.div>
-             <h2 className="text-3xl md:text-5xl font-black text-white italic uppercase tracking-tighter">Looking forward to you at the Startup Expo!</h2>
-             <p className="text-gray-400 text-sm">Pass sent to: <span className="text-white font-medium">{submittedData.email}</span></p>
+            <h2 className="text-3xl md:text-5xl font-black text-white italic uppercase tracking-tighter">
+              Looking forward to you at the Startup Expo!
+            </h2>
+            
+            {/* ✅ Check agar email hai toh hi "sent to" dikhaye */}
+            {submittedData.email ? (
+              <p className="text-gray-400 text-sm">
+                Pass sent to: <span className="text-white font-medium">{submittedData.email}</span>
+              </p>
+            ) : (
+              <p className="text-gray-400 text-sm">
+                Your pass is ready! Please <span className="text-white font-medium">Download</span> it below.
+              </p>
+            )}
           </div>
 
           <div className="w-full bg-zinc-900/50 border border-white/10 rounded-[1.5rem] overflow-hidden shadow-2xl relative aspect-[3/1]">
