@@ -15,8 +15,16 @@ import DesignPreview from './pages/DesignPreview';
 import ScrollToTop from "./layout/scrollToTop";
 import Contact from './components/Contact';
 import VisitorPass from './components/VisitorPassForm';
+import useGoogleAnalytics from './hooks/useGoogleAnalytics';
+
+const AnalyticsTracker = () => {
+  useGoogleAnalytics();
+  return null;
+};
 
 const App = () => {
+    /* ✅ Analytics initializer (runs inside Router) */
+
 
   React.useEffect(() => {
     const savedTheme = localStorage.getItem('theme') || 'dark';
@@ -25,6 +33,8 @@ const App = () => {
 
   return (
     <Router>
+      <AnalyticsTracker/>
+
       <ScrollToTop />
       <div className="min-h-screen flex flex-col font-sans">
         <Routes>
